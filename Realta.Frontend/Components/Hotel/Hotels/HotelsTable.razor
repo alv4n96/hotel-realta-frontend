@@ -1,0 +1,117 @@
+﻿<table class="table top-selling-table">
+    <thead>
+    <tr>
+        <th>
+            <h6 class="text-sm text-medium">Id</h6>
+        </th>
+        <th class="min-width">
+            <h6 class="text-sm text-medium">
+                Hotel Name
+                <i class="lni lni-arrows-vertical"></i>
+            </h6>
+        </th>
+        <th class="min-width">
+            <h6 class="text-sm text-medium">
+                Rating Star
+            </h6>
+        </th>
+        <th class="min-width">
+            <h6 class="text-sm text-medium">
+                Phone Number
+            </h6>
+        </th>
+        <th class="min-width">
+            <h6 class="text-sm text-medium">
+                Status
+            </h6>
+        </th>
+        <th class="min-width">
+            <h6 class="text-sm text-medium">
+                Modified Date <i class="lni lni-arrows-vertical"></i>
+            </h6>
+        </th>
+        <th>
+            <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
+                <a href="#0" class="main-btn primary-btn-outline rounded-btn p-2">
+                    <i class="mdi mdi-home-plus"></i> Add
+                </a>
+            </div>
+        </th>
+    </tr>
+    </thead>
+
+
+    @if (DataHotel.Count < 0)
+    {
+    <tbody>
+        @foreach (var hotel in DataHotel)
+        {
+            <tr>
+                <td>
+                    <p class="text-sm">@hotel.HotelId</p>
+                </td>
+                <td>
+                    <p class="text-sm">@hotel.HotelName</p>
+                </td>
+                <td>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (i > (int)hotel.HotelRatingStar)
+                        {
+                            <span class="mdi mdi-star-outline"></span>
+                        }
+                        else
+                        {
+                            <span class="mdi mdi-star"></span>
+                        }
+                    }
+                </td>
+                <td>
+                    <p class="text-sm">@hotel.HotelPhonenumber</p>
+                </td>
+                <td>
+                    @if (hotel.HotelStatus == "unavailable")
+                    {
+                        <span class="status-btn close-btn">Inactive</span>
+                    }
+                    else
+                    {
+                        <span class="status-btn active-btn">Active</span>
+                    }
+                </td>
+                <td>
+                    <p class="text-sm">
+                        @hotel.HotelModifiedDate
+                    </p>
+                </td>
+                <td>
+                    <div class="action justify-content-end">
+                        <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="lni lni-more-alt"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                            <li class="dropdown-item">
+                                <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="/facilities" class="text-gray">Add Facilities</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="text-gray" data-bs-toggle="modal" data-bs-target="#switchstatushotel">Switch Status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    }
+    else
+    {
+        <div class="text-center mw-100">
+                <h3>
+                    DATA NOT FOUND!
+                </h3>
+            </div>
+    }
+</table>

@@ -1,0 +1,581 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\obj\\Debug\\net6.0\\build-gz\\dz+VGHgZ.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Realta.Frontend.styles.css",
+      "PackagePath": "staticwebassets\\Realta.Frontend.styles.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\.gitignore",
+      "PackagePath": "staticwebassets\\vendor\\.gitignore"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\LICENSE",
+      "PackagePath": "staticwebassets\\vendor"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\README.md",
+      "PackagePath": "staticwebassets\\vendor\\README.md"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\fullcalendar.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\fullcalendar.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\lineicons.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\lineicons.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\loading-bar.min.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\loading-bar.min.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\main.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\materialdesignicons.min.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\materialdesignicons.min.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\morris.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\morris.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\LineIcons.eot",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\LineIcons.eot"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\LineIcons.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\LineIcons.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\LineIcons.ttf",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\LineIcons.ttf"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\LineIcons.woff",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\LineIcons.woff"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\LineIcons.woff2",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\LineIcons.woff2"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\vendor\\assets\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\auth\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\auth\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\auth\\reset-password.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\auth\\reset-password.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\auth\\shape.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\auth\\shape.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\auth\\signin-image.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\auth\\signin-image.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-1\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-1\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-1\\admin-1.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-1\\admin-1.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-1\\admin-2.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-1\\admin-2.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-1\\admin-3.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-1\\admin-3.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-1\\card-1.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-1\\card-1.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-1\\card-2.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-1\\card-2.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-1\\card-3.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-1\\card-3.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-2\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-2\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-2\\card-1.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-2\\card-1.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-2\\card-2.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-2\\card-2.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-2\\card-3.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-2\\card-3.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-4\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-4\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-4\\card-1.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-4\\card-1.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-4\\card-2.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-4\\card-2.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-4\\card-3.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-4\\card-3.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-5\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-5\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-5\\card-1.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-5\\card-1.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-5\\card-2.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-5\\card-2.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-6\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-6\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-6\\card-1.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-6\\card-1.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-6\\card-2.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-6\\card-2.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-6\\card-3.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-6\\card-3.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\cards\\card-style-6\\card-4.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\cards\\card-style-6\\card-4.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\clients\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\clients\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\clients\\client-profile.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\clients\\client-profile.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\clients\\clients-cover.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\clients\\clients-cover.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\favicon.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\favicon.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\invoice\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\invoice\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\invoice\\uideck-logo.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\invoice\\uideck-logo.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\lead\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\lead\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\lead\\lead-1.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\lead\\lead-1.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\lead\\lead-2.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\lead\\lead-2.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\lead\\lead-3.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\lead\\lead-3.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\lead\\lead-4.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\lead\\lead-4.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\lead\\lead-5.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\lead\\lead-5.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\lead\\lead-6.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\lead\\lead-6.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\logo\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\logo\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\logo\\logo-2.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\logo\\logo-2.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\logo\\logo-white.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\logo\\logo-white.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\logo\\logo.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\logo\\logo.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\modals\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\modals\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\modals\\image-1.svg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\modals\\image-1.svg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\products\\product-mini-1.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\products\\product-mini-1.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\products\\product-mini-2.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\products\\product-mini-2.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\products\\product-mini-3.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\products\\product-mini-3.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\products\\product-mini-4.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\products\\product-mini-4.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\products\\product-mini-5.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\products\\product-mini-5.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\profile\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\profile\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\profile\\profile-1.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\profile\\profile-1.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\profile\\profile-cover.jpg",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\profile\\profile-cover.jpg"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\profile\\profile-image.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\profile\\profile-image.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\profile\\profile.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\profile\\profile.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\projects\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\projects\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\projects\\image-1.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\projects\\image-1.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\projects\\image-2.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\projects\\image-2.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\images\\projects\\image-3.png",
+      "PackagePath": "staticwebassets\\vendor\\assets\\images\\projects\\image-3.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\Chart.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\Chart.min.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\dynamic-pie-chart.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\dynamic-pie-chart.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\fullcalendar.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\fullcalendar.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\jvectormap.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\jvectormap.min.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\loading-bar.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\loading-bar.min.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\polyfill.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\polyfill.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\world-merc.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\world-merc.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\_common.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\_common.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\_default.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\_default.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\_mixin.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\_mixin.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\_sidebar.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\_sidebar.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\alerts\\_alerts.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\alerts\\_alerts.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\auth\\_signin.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\auth\\_signin.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\auth\\_signup.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\auth\\_signup.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\buttons\\_buttons.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\buttons\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\calendar\\_calendar.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\calendar\\_calendar.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\cards\\_cards.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\cards\\_cards.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\dashboards\\_dashboards.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\dashboards\\_dashboards.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\forms\\_form-elements.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\forms\\_form-elements.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\header\\_header.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\header\\_header.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\icons\\_icons.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\icons\\_icons.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\invoice\\_invoice.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\invoice\\_invoice.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\main.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\main.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\notification\\_notification.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\notification\\_notification.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\settings\\_settings.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\settings\\_settings.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\tables\\_tables.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\tables\\_tables.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\typography\\.DS_Store",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\typography\\.DS_Store"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\assets\\scss\\typography\\_typography.scss",
+      "PackagePath": "staticwebassets\\vendor\\assets\\scss\\typography\\_typography.scss"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\gulpfile.js",
+      "PackagePath": "staticwebassets\\vendor\\gulpfile.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\package-lock.json",
+      "PackagePath": "staticwebassets\\vendor\\package-lock.json"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\package.json",
+      "PackagePath": "staticwebassets\\vendor\\package.json"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\wwwroot\\vendor\\yarn.lock",
+      "PackagePath": "staticwebassets\\vendor\\yarn.lock"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Realta.Frontend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Realta.Frontend.props",
+      "PackagePath": "build\\Realta.Frontend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Realta.Frontend.props",
+      "PackagePath": "buildMultiTargeting\\Realta.Frontend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Realta.Frontend.props",
+      "PackagePath": "buildTransitive\\Realta.Frontend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
