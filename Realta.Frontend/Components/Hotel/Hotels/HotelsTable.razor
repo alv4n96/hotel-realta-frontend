@@ -39,11 +39,11 @@
         </th>
     </tr>
     </thead>
+    <tbody>
 
 
     @if (DataHotel.Count < 0)
     {
-    <tbody>
         @foreach (var hotel in DataHotel)
         {
             <tr>
@@ -56,7 +56,7 @@
                 <td>
                     @for (int i = 1; i <= 5; i++)
                     {
-                        if (i > (int)hotel.HotelRatingStar)
+                        if (i > hotel.HotelRatingStar)
                         {
                             <span class="mdi mdi-star-outline"></span>
                         }
@@ -104,14 +104,16 @@
                 </td>
             </tr>
         }
-    </tbody>
     }
     else
     {
-        <div class="text-center mw-100">
-                <h3>
-                    DATA NOT FOUND!
-                </h3>
-            </div>
+        <tr>
+            <td colspan="7" class="text-center text-gray">
+                <h1>
+                    DATA NOT FOUND
+                </h1>
+            </td>
+        </tr>
     }
+    </tbody>
 </table>
