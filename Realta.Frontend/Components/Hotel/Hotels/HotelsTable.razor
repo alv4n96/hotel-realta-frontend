@@ -42,7 +42,7 @@
     <tbody>
 
 
-    @if (DataHotel.Count < 0)
+    @if (DataHotel.Count > 0)
     {
         @foreach (var hotel in DataHotel)
         {
@@ -56,7 +56,11 @@
                 <td>
                     @for (int i = 1; i <= 5; i++)
                     {
-                        if (i > hotel.HotelRatingStar)
+                        if ( (hotel.HotelRatingStar - i) < 1 && (hotel.HotelRatingStar - i) > 0 )
+                        {
+                            <span class="mdi mdi-star-outline"></span>
+                        }
+                        else if ( (hotel.HotelRatingStar - i) < 0 )
                         {
                             <span class="mdi mdi-star-outline"></span>
                         }
@@ -70,7 +74,7 @@
                     <p class="text-sm">@hotel.HotelPhonenumber</p>
                 </td>
                 <td>
-                    @if (hotel.HotelStatus == "unavailable")
+                    @if (hotel.HotelStatus == false)
                     {
                         <span class="status-btn close-btn">Inactive</span>
                     }
@@ -94,7 +98,7 @@
                                 <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="/facilities" class="text-gray">Add Facilities</a>
+                                <a href="facility" class="text-gray">Add Facilities</a>
                             </li>
                             <li class="dropdown-item">
                                 <a class="text-gray" data-bs-toggle="modal" data-bs-target="#switchstatushotel">Switch Status</a>

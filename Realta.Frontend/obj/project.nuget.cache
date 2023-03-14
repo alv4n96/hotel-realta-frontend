@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4F/7PrgTWp1S+voI9CGSoAWoYg8z13Ma/A49bYv1QOhq/I/3lfO6ng1g3oV+PV1H5e8gtvyO4QP30RmDgevO+g==",
+  "dgSpecHash": "u+4brIVDCGk42U/6lx0IqziaesTDa2yweMFTacUQdWTOc7RrAH7YhjyCc/gogpn20YgZ2N2xV43l0yk1E7RvoA==",
   "success": true,
-  "projectFilePath": "D:\\C#_PROJECTS\\HotelRealtaFrontend\\Realta.Frontend\\Realta.Frontend.csproj",
+  "projectFilePath": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\Realta.Frontend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alvan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.11\\microsoft.aspnetcore.authorization.6.0.11.nupkg.sha512",
     "C:\\Users\\alvan\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.11\\microsoft.aspnetcore.components.6.0.11.nupkg.sha512",
