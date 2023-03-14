@@ -4,222 +4,252 @@
 <section class="table-components">
     <div class="container-fluid">
         <div class="title-wrapper pt-30">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-            <div class="title mb-30">
-                <h2>Hotels</h2>
-            </div>
-            </div>
-            <!-- end col -->
-            <div class="col-md-6">
-            <div class="breadcrumb-wrapper mb-30">
-                <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                    <a href="#0">Hotels</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                    Hotel
-                    </li>
-                </ol>
-                </nav>
-            </div>
-            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="title mb-30">
+                        <h2>Hotels</h2>
+                    </div>
+                </div>
+                <!-- end col -->
+                <div class="col-md-6">
+                    <div class="breadcrumb-wrapper mb-30">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#0">Hotels</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Hotel
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
 
-            <!-- end col -->
+                <!-- end col -->
             </div>
             <!-- end row -->
         </div>
 
-        
 
         <div class="card-style ">
             <div class="d-flex justify-content-center">
-                    <div class="search d-md-flex">
-                        <div class="input-style-3 mx-auto">
-                            <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search Hotel" aria-label="Search" aria-describedby="search-addon" />
-                            <span class="icon">
-                                <button class="btn 
+                <div class="search d-md-flex">
+                    <div class="input-style-3 mx-auto">
+                        <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search Hotel" aria-label="Search" aria-describedby="search-addon"/>
+                        <span class="icon">
+                            <button class="btn 
                                                border-0 
                                                lni lni-search-alt
                                                position-absolute top-40 start-50 translate-middle">
-                                </button>
-                            </span>
-                        </div>
-                        <div class="mx-auto">
-                            <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
-                                <i class="mdi mdi-home-search-outline"></i>search
                             </button>
-                        </div>
+                        </span>
                     </div>
+                    <div class="mx-auto">
+                        <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
+                            <i class="mdi mdi-home-search-outline"></i>search
+                        </button>
+                    </div>
+                </div>
             </div>
-            
+
             <!-- End Title -->
             <div class="table-responsive">
-              <HotelsTableStatic />
-              <!-- End Table -->
+                <HotelsTableStatic/>
+                <!-- End Table -->
             </div>
+            <Paging2/>
         </div>
+
     </div>
 </section>
 
 <!-- Edit Hotel -->
 <div class="modal fade" id="edithotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="edithotelLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="edithotelLabel">Edit Hotel</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       <div class="card-style mb-30">
-                  <div class="input-style-1">
-                    <label>Hotel Name</label>
-                    <input type="text" placeholder="Full Name">
-                  </div>
-
-                  <div class="input-style-1">
-                    <label>Phone Number</label>
-                    <input type="text" placeholder="Phone Number">
-                  </div>
-
-                  <div class="select-style-1">
-                    <label>Status</label>
-                    <div class="select-position">
-                      <select>
-                        <option hidden>Choose status hotel</option>
-                        <option value="">Active</option>
-                        <option value="">Disactive</option>
-                      </select>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="edithotelLabel">Edit Hotel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-style mb-30">
+                    <div class="input-style-1">
+                        <label>Hotel Name</label>
+                        <input type="text" placeholder="Full Name">
                     </div>
-                  </div>                  <!-- end input -->
 
-                  <div class="input-style-3">
-                    <label>City</label>
-                    <input type="text" placeholder="City">
-                    <span class="icon mt-30"><i class="lni lni-search-alt"></i></span>
-                  </div>
+                    <div class="input-style-1">
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="Phone Number">
+                    </div>
 
-                  <div class="input-style-1">
-                    <label>Address</label>
-                    <textarea placeholder="Address" rows="3"></textarea>
-                  </div>
-                  
-                  
-                  <div class="input-style-1">
-                    <label>Hotel Description</label>
-                    <textarea placeholder="Hotel Description" rows="3"></textarea>
-                  </div>
-                  <!-- end input -->
+                    <div class="select-style-1">
+                        <label>Status</label>
+                        <div class="select-position">
+                            <select>
+                                <option hidden>Choose status hotel</option>
+                                <option value="">Active</option>
+                                <option value="">Disactive</option>
+                            </select>
+                        </div>
+                    </div> <!-- end input -->
+
+                    <div class="input-style-3">
+                        <label>City</label>
+                        <input type="text" placeholder="City">
+                        <span class="icon mt-30">
+                            <i class="lni lni-search-alt"></i>
+                        </span>
+                    </div>
+
+                    <div class="input-style-1">
+                        <label>Address</label>
+                        <textarea placeholder="Address" rows="3"></textarea>
+                    </div>
+
+
+                    <div class="input-style-1">
+                        <label>Hotel Description</label>
+                        <textarea placeholder="Hotel Description" rows="3"></textarea>
+                    </div>
+                    <!-- end input -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Create</button>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create</button>
-      </div>
     </div>
-  </div>
 </div>
 
 <!-- Create Hotel -->
 <div class="modal fade" id="createhotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createhotelLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="createhotelLabel">Create Hotel</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       <div class="card-style mb-30">
-                  <div class="input-style-1">
-                    <label>Hotel Name</label>
-                    <input type="text" placeholder="Full Name">
-                  </div>
-
-           <div class="input-style-2">
-               <label>Phone Number</label>
-               <input type="tel" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-           </div>
-           
-          <div class="form-outline mb-3" style="width: 100%; max-width: 22rem">
-            <input type="text" id="phone" class="form-control" data-mdb-input-mask="+48 999-999-999" />
-            <label class="form-label" for="phone">Phone number with country code</label>
-          </div> 
-
-           <div class="select-style-1">
-                    <label>Status</label>
-                    <div class="select-position">
-                      <select>
-                        <option hidden>Choose status hotel</option>
-                        <option value="">Active</option>
-                        <option value="">Disactive</option>
-                      </select>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createhotelLabel">Create Hotel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-style mb-30">
+                    <div class="input-style-1">
+                        <label>Hotel Name</label>
+                        <input type="text" placeholder="Full Name">
                     </div>
-                  </div>                  <!-- end input -->
 
-                  <div class="input-style-3">
-                    <label>City</label>
-                    <input type="text" placeholder="City">
-                    <span class="icon mt-30"><i class="lni lni-search-alt"></i></span>
-                  </div>
+                    <div class="input-style-2">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+62 857 0718 0167" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    </div>
 
-                  <div class="input-style-1">
-                    <label>Address</label>
-                    <textarea placeholder="Address" rows="3"></textarea>
-                  </div>
-                  
-                  
-                  <div class="input-style-1">
-                    <label>Hotel Description</label>
-                    <textarea placeholder="Hotel Description" rows="3"></textarea>
-                  </div>
-                  <!-- end input -->
+                    <div class="select-style-1">
+                        <label>Status</label>
+                        <div class="select-position">
+                            <select>
+                                <option hidden>Choose status hotel</option>
+                                <option value="">Active</option>
+                                <option value="">Disactive</option>
+                            </select>
+                        </div>
+                    </div> <!-- end input -->
+
+                    <div class="input-style-3">
+                        <label>City</label>
+                        <input type="text" placeholder="City">
+                        <span class="icon mt-30">
+                            <i class="lni lni-search-alt"></i>
+                        </span>
+                    </div>
+
+                    <div class="input-style-1">
+                        <label>Address</label>
+                        <textarea placeholder="Address" rows="3"></textarea>
+                    </div>
+
+
+                    <div class="input-style-1">
+                        <label>Hotel Description</label>
+                        <textarea placeholder="Hotel Description" rows="3"></textarea>
+                    </div>
+                    <!-- end input -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Create</button>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create</button>
-      </div>
     </div>
-  </div>
 </div>
 
 
 <!--Switch Status-->
 <div class="modal fade" id="switchstatushotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="switchstatushotelLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="switchstatushotelLabel">Edit Status Hotel</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       <div class="card-style mb-30">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="switchstatushotelLabel">Edit Status Hotel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-style mb-30">
 
-                  <div class="select-style-1">
-                    <label>Status</label>
-                    <div class="select-position">
-                      <select>
-                        <option hidden>Choose status hotel</option>
-                        <option value="">Active</option>
-                        <option value="">Disactive</option>
-                      </select>
+                    <div class="select-style-1">
+                        <label>Status</label>
+                        <div class="select-position">
+                            <select>
+                                <option hidden>Choose status hotel</option>
+                                <option value="">Active</option>
+                                <option value="">Disactive</option>
+                            </select>
+                        </div>
+                    </div> <!-- end input -->
+
+                    <div class="input-style-1">
+                        <label>Reason Status</label>
+                        <textarea placeholder="Hotel Description" rows="3"></textarea>
                     </div>
-                  </div>                  <!-- end input -->
-                  
-                  <div class="input-style-1">
-                    <label>Reason Status</label>
-                    <textarea placeholder="Hotel Description" rows="3"></textarea>
-                  </div>
-                  <!-- end input -->
+                    <!-- end input -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Create</button>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create</button>
-      </div>
     </div>
-  </div>
 </div>
 
 
+<!--Delete Hotel-->
+<div class="warning-modal">
+    <div class="modal fade" id="@($"delete")" tabindex="-1" aria-hidden="true" role="dialog" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-style warning-card text-center">
+                <div class="modal-body">
+                    <div class="icon text-danger mb-20">
+                        <i class="lni lni-warning"></i>
+                    </div>
+                    <div class="content mb-30">
+                        <h3 class="mb-15">
+                            Anda akan menghapus Hotel ini?
+                        </h3>
+                        <p class="text-sm text-medium">
+                            Cancel untuk Membatalkan
+                        </p>
+                    </div>
+                    <div class="action d-flex flex-wrap justify-content-center">
+                        <button type="button" data-bs-dismiss="modal" class="main-btn dark-btn-outline btn-hover m-1">
+                            Cancel
+                        </button>
+                        <button data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

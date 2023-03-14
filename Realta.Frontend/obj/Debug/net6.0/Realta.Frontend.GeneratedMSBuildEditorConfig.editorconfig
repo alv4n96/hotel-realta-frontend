@@ -32,12 +32,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb3RlbFxIb3RlbHNcSG90ZWxzVGFibGVTdGF0aWMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Paging.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdpbmcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Paging2.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdpbmcyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Pages/Hotel/Facilities.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG90ZWxcRmFjaWxpdGllcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Pages/Hotel/Hotels.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG90ZWxcSG90ZWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Pages/Hotel/Reviews.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG90ZWxcUmV2aWV3cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Pages/Index.razor]

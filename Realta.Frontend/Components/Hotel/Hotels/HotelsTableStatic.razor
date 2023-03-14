@@ -2,14 +2,19 @@
     <thead>
     <tr>
         <th>
-            <h6 class="text-sm text-medium">Id</h6>
+            <h6 class="text-sm text-medium">
+                Id
+                <i class="mdi mdi-sort-ascending"></i>
+                @* <span class="mdi mdi-sort-descending"></span> *@
+            </h6>
         </th>
         <th class="min-width">
             <h6 class="text-sm text-medium">
                 Hotel Name
-                <i class="lni lni-arrows-vertical"></i>
+                <i class="mdi mdi-sort-ascending"></i>
             </h6>
         </th>
+
         <th class="min-width">
             <h6 class="text-sm text-medium">
                 Rating Star
@@ -27,7 +32,7 @@
         </th>
         <th class="min-width">
             <h6 class="text-sm text-medium">
-                Modified Date <i class="lni lni-arrows-vertical"></i>
+                Modified Date <i class="mdi mdi-sort-ascending"></i>
             </h6>
         </th>
         <th>
@@ -52,10 +57,16 @@
             </td>
             <td>
 
-
-                @for (int j = 1; j <= 5; j++)
+                @{
+                    decimal randomNum = new Random().Next(10001, 60001) / 10000.0m;
+                }
+                @for (int starNumber = 1; starNumber <= 5; starNumber++)
                 {
-                    if (j > randomNum)
+                    if ((randomNum - starNumber) < 1 && (randomNum - starNumber) > 0)
+                    {
+                        <span class="mdi mdi-star-half-full"></span>
+                    }
+                    else if ((randomNum - starNumber) < 0)
                     {
                         <span class="mdi mdi-star-outline"></span>
                     }
@@ -66,10 +77,12 @@
                 }
             </td>
             <td>
-                <p class="text-sm">+62 857 0718 016 @i </p>
+                <p class="text-sm">@phoneNumber@i</p>
             </td>
             <td>
-
+                @{
+                    int checkerStatus = new Random().Next(0, 2);
+                }
 
                 @if (checkerStatus == 0)
 
@@ -85,7 +98,7 @@
             </td>
             <td>
                 <p class="text-sm">
-                   @randomDate.ToString("dd MM yyyy") 
+                    @randomDate.ToString("dd MMMM yyyy")
                 </p>
             </td>
             <td>
@@ -98,10 +111,15 @@
                             <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
                         </li>
                         <li class="dropdown-item">
-                            <a href="facility" class="text-gray">Add Facilities</a>
+                            <a href="/hotels/1/facility" class="text-gray">Add Facilities</a>
                         </li>
                         <li class="dropdown-item">
                             <a class="text-gray" data-bs-toggle="modal" data-bs-target="#switchstatushotel">Switch Status</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">
+                                Delete
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -113,9 +131,8 @@
 
 @code
 {
-    int checkerStatus = new Random().Next(2);
-    int randomNum = new Random().Next(1, 6);
-    
+    string phoneNumber = "+62 857 0718 016";
+
     private DateTime randomDate;
 
     protected override void OnInitialized()

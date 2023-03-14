@@ -1,4 +1,4 @@
-﻿@page "/hotels/{id:int}/facility"
+﻿@page "/hotels/{id:int}/reviews"
 
 <section class="table-components">
 <div class="container-fluid">
@@ -6,7 +6,7 @@
     <div class="row align-items-center">
         <div class="col-md-6">
             <div class="title">
-                <h2>Facilities</h2>
+                <h2>Hotels</h2>
             </div>
         </div>
         <!-- end col -->
@@ -40,7 +40,7 @@
             </p>
         </div>
         <div class="invoice-date text-end">
-            <p>@phoneNumber<span>6</span></p>
+            <p>+62 857 0718 0167</p>
             <p>
                 <span class="mdi mdi-star"></span>
                 <span class="mdi mdi-star"></span>
@@ -54,6 +54,7 @@
 
 
 <div class="card-style ">
+    <h6 class="mb-10">Facilities</h6>
     <div class="d-flex justify-content-center">
         <div class="search d-md-flex">
             <div class="input-style-3 mx-auto">
@@ -80,53 +81,38 @@
             <thead>
             <tr>
                 <th>
-                    <h6 class="text-sm text-medium text-center">Id</h6>
+                    <h6 class="text-sm text-medium">Id</h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Facility Name
+                    <h6 class="text-sm text-medium">
+                        Hotel Name
                         <i class="lni lni-arrows-vertical"></i>
                     </h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Room Number
-
+                    <h6 class="text-sm text-medium">
+                        Rating Star
+                        <i class="lni lni-arrows-vertical"></i>
                     </h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Start Date
+                    <h6 class="text-sm text-medium">
+                        Phone Number <i class="lni lni-arrows-vertical"></i>
                     </h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        End Date
+                    <h6 class="text-sm text-medium">
+                        Status <i class="lni lni-arrows-vertical"></i>
                     </h6>
                 </th>
                 <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Low Price
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Rate Price
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        High Price
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Modified Date
+                    <h6 class="text-sm text-medium">
+                        Modified Date <i class="lni lni-arrows-vertical"></i>
                     </h6>
                 </th>
                 <th>
                     <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
-                        <a href="#0" class="main-btn primary-btn-outline rounded-btn p-2">
+                        <a href="#0" class="main-btn dark-btn-outline rounded-btn p-2">
                             <i class="mdi mdi-home-plus"></i> Add
                         </a>
                     </div>
@@ -137,58 +123,93 @@
 
             <tbody>
 
-            @for (int i = 1; i < 11; i++)
-            {
-                <tr>
-                    <td>
-                        <p class="text-sm text-center">@i</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">Facility Sample @i</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">UQ-@i</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">2 May 2022</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">2 June 2022</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">Rp. 150 000</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">Rp. 170 000</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">Rp. 250 000</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">15 Mei 2023</p>
-                    </td>
-                    <td>
-                                    <div class="action justify-content-end">
-                                        <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="lni lni-more-alt"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
-                                            <li class="dropdown-item">
-                                                <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
-                                            </li>
-                                            <li class="dropdown-item">
-                                                <a href="/hotels/1/facility" class="text-gray">History</a>
-                                            </li>
-                                            <li class="dropdown-item">
-                                                <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">
-                                                    Delete
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                </tr>
-            }
+            <tr>
+                <td>
+                    <p class="text-sm">1</p>
+                </td>
+                <td>
+                    <p class="text-sm">Grand Livina Malang</p>
+                </td>
+                <td>
+                    <span class="mdi mdi-star"></span>
+                    <span class="mdi mdi-star"></span>
+                    <span class="mdi mdi-star"></span>
+                    <span class="mdi mdi-star"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                </td>
+                <td>
+                    <p class="text-sm">+62 857 0718 0167</p>
+                </td>
+                <td>
+                    <span class="status-btn active-btn">Active</span>
+                </td>
+                <td>
+                    <p class="text-sm">7-Mei-2023</p>
+                </td>
+                <td>
+                    <div class="action justify-content-end">
+                        <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="lni lni-more-alt"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                            <li class="dropdown-item">
+                                <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="/facilities" class="text-gray">Add Facilities</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="text-gray" data-bs-toggle="modal" data-bs-target="#switchstatushotel">Switch Status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <p class="text-sm">2</p>
+                </td>
+                <td>
+                    <p class="text-sm">Blibis Palembang</p>
+                </td>
+                <td>
+                    <span class="mdi mdi-star"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                </td>
+                <td>
+                    <p class="text-sm">+62 857 1234 3214</p>
+                </td>
+                <td>
+                    <span class="status-btn close-btn">Disactive</span>
+                </td>
+                <td>
+                    <p class="text-sm">2-Mei-2023</p>
+                </td>
+                <td>
+                    <div class="action justify-content-end">
+                        <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="lni lni-more-alt"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                            <li class="dropdown-item">
+                                <a href="#0" class="text-gray">Edit</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#0" class="text-gray">Add Facilities</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#0" class="text-gray">Switch Status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+
             </tbody>
         </table>
         <!-- End Table -->
@@ -359,7 +380,4 @@
 {
     [Parameter]
     public int id { get; set; }
-    string phoneNumber = "+62 857 0718 016";
-
-
 }
