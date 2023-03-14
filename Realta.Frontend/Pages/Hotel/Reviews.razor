@@ -1,221 +1,182 @@
 ﻿@page "/hotels/{id:int}/reviews"
 
 <section class="table-components">
-<div class="container-fluid">
-<div class="title-wrapper pt-30">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <div class="title">
-                <h2>Hotels</h2>
+    <div class="container-fluid">
+        <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="title">
+                        <h2>Reviews</h2>
+                    </div>
+                </div>
+                <!-- end col -->
+                <div class="col-md-6">
+                    <div class="breadcrumb-wrapper mb-30">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#0">Hotels</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Reviews
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+
+
+        <div class="invoice-card card-style mb-30">
+            <div class="invoice-header">
+                <div class="invoice-for">
+                    <h2 class="mb-10">Grand Livina Malang</h2>
+                    <p class="text-sm">
+                        Jl. Abu Abu no 20, Kec. Kuningan, Kota Malang, Jawa Timur, 65151
+                    </p>
+                </div>
+                <div class="invoice-date text-end">
+                    <p>
+                        @phoneNumber<span>6</span>
+                    </p>
+                    <p>
+                        <span class="mdi mdi-star"></span>
+                        <span class="mdi mdi-star"></span>
+                        <span class="mdi mdi-star"></span>
+                        <span class="mdi mdi-star"></span>
+                        <span class="mdi mdi-star-outline"></span>
+                    </p>
+                </div>
             </div>
         </div>
-        <!-- end col -->
-        <div class="col-md-6">
-            <div class="breadcrumb-wrapper mb-30">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#0">Hotels</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            Facilities
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-
-        <!-- end col -->
-    </div>
-    <!-- end row -->
-</div>
 
 
-<div class="invoice-card card-style mb-30">
-    <div class="invoice-header">
-        <div class="invoice-for">
-            <h2 class="mb-10">Grand Livina Malang</h2>
-            <p class="text-sm">
-                Jl. Abu Abu no 20, Kec. Kuningan, Kota Malang, Jawa Timur, 65151
-            </p>
-        </div>
-        <div class="invoice-date text-end">
-            <p>+62 857 0718 0167</p>
-            <p>
-                <span class="mdi mdi-star"></span>
-                <span class="mdi mdi-star"></span>
-                <span class="mdi mdi-star"></span>
-                <span class="mdi mdi-star"></span>
-                <span class="mdi mdi-star-outline"></span>
-            </p>
-        </div>
-    </div>
-</div>
-
-
-<div class="card-style ">
-    <h6 class="mb-10">Facilities</h6>
-    <div class="d-flex justify-content-center">
-        <div class="search d-md-flex">
-            <div class="input-style-3 mx-auto">
-                <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search Facilities" aria-label="Search" aria-describedby="search-addon"/>
-                <span class="icon">
-                    <button class="btn 
+        <div class="card-style ">
+            <div class="d-flex justify-content-center">
+                <div class="search d-md-flex">
+                    <div class="input-style-3 mx-auto">
+                        <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search Facilities" aria-label="Search" aria-describedby="search-addon"/>
+                        <span class="icon">
+                            <button class="btn 
                                                border-0 
                                                lni lni-search-alt
                                                position-absolute top-40 start-50 translate-middle">
-                    </button>
-                </span>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="mx-auto">
+                        <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
+                            <i class="mdi mdi-magnify"></i>search
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="mx-auto">
-                <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
-                    <i class="mdi mdi-magnify"></i>search
-                </button>
+
+            <!-- End Title -->
+            <div class="table-responsive">
+                <table class="table top-selling-table">
+                    <thead>
+                    <tr>
+                        <th>
+                            <h6 class="text-sm text-medium text-center">Id</h6>
+                        </th>
+                        <th class="min-width">
+                            <h6 class="text-sm text-medium text-center">
+                                Reviews
+                                <i class="lni lni-arrows-vertical"></i>
+                            </h6>
+                        </th>
+                        <th class="min-width">
+                            <h6 class="text-sm text-medium text-center">
+                                Rating
+
+                            </h6>
+                        </th>
+                        <th class="min-width">
+                            <h6 class="text-sm text-medium text-center">
+                                Created On
+                            </h6>
+                        </th>
+                        <th>
+                            @* <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel"> *@
+                            @*     <a href="#0" class="main-btn primary-btn-outline rounded-btn p-2"> *@
+                            @*         <i class="mdi mdi-home-plus"></i> Add *@
+                            @*     </a> *@
+                            @* </div> *@
+                        </th>
+                    </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                    @for (int i = 1; i < 11; i++)
+                    {
+                        <tr>
+                            <td>
+                                <p class="text-sm text-center">@i</p>
+                            </td>
+                            <td>
+                                <p class="text-sm text-center">Hotel @i ini memang yang terbaik, baru pertama di ho... </p>
+                            </td>
+                            <td class="text-center">
+                                
+                            @{
+                                int randomNum = new Random().Next(0, 6);
+                            }
+                            @for (int starNumber = 1; starNumber <= 5; starNumber++)
+                            {
+                                if ((randomNum - starNumber) < 1 && (randomNum - starNumber) > 0)
+                                {
+                                    <span class="mdi mdi-star-half-full text-center"></span>
+                                }
+                                else if ((randomNum - starNumber) < 0)
+                                {
+                                    <span class="mdi mdi-star-outline text-center"></span>
+                                }
+                                else
+                                {
+                                    <span class="mdi mdi-star text-center"></span>
+                                }
+                            }
+
+                            </td>
+                            <td>
+                                <p class="text-sm text-center">2 May 2022</p>
+                            </td>
+                            <td>
+                                <div class="action align-content-center">
+                                    <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="lni lni-more-alt"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                                        <li class="dropdown-item">
+                                            <a href="/hotels/1/facility" class="text-gray">Detail</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">
+                                                Delete
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+                <!-- End Table -->
             </div>
+            <Paging2/>
         </div>
     </div>
-
-    <!-- End Title -->
-    <div class="table-responsive">
-        <table class="table top-selling-table">
-            <thead>
-            <tr>
-                <th>
-                    <h6 class="text-sm text-medium">Id</h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium">
-                        Hotel Name
-                        <i class="lni lni-arrows-vertical"></i>
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium">
-                        Rating Star
-                        <i class="lni lni-arrows-vertical"></i>
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium">
-                        Phone Number <i class="lni lni-arrows-vertical"></i>
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium">
-                        Status <i class="lni lni-arrows-vertical"></i>
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium">
-                        Modified Date <i class="lni lni-arrows-vertical"></i>
-                    </h6>
-                </th>
-                <th>
-                    <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
-                        <a href="#0" class="main-btn dark-btn-outline rounded-btn p-2">
-                            <i class="mdi mdi-home-plus"></i> Add
-                        </a>
-                    </div>
-                </th>
-            </tr>
-            </thead>
-
-
-            <tbody>
-
-            <tr>
-                <td>
-                    <p class="text-sm">1</p>
-                </td>
-                <td>
-                    <p class="text-sm">Grand Livina Malang</p>
-                </td>
-                <td>
-                    <span class="mdi mdi-star"></span>
-                    <span class="mdi mdi-star"></span>
-                    <span class="mdi mdi-star"></span>
-                    <span class="mdi mdi-star"></span>
-                    <span class="mdi mdi-star-outline"></span>
-                </td>
-                <td>
-                    <p class="text-sm">+62 857 0718 0167</p>
-                </td>
-                <td>
-                    <span class="status-btn active-btn">Active</span>
-                </td>
-                <td>
-                    <p class="text-sm">7-Mei-2023</p>
-                </td>
-                <td>
-                    <div class="action justify-content-end">
-                        <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
-                            <li class="dropdown-item">
-                                <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="/facilities" class="text-gray">Add Facilities</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a class="text-gray" data-bs-toggle="modal" data-bs-target="#switchstatushotel">Switch Status</a>
-                            </li>
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <p class="text-sm">2</p>
-                </td>
-                <td>
-                    <p class="text-sm">Blibis Palembang</p>
-                </td>
-                <td>
-                    <span class="mdi mdi-star"></span>
-                    <span class="mdi mdi-star-outline"></span>
-                    <span class="mdi mdi-star-outline"></span>
-                    <span class="mdi mdi-star-outline"></span>
-                    <span class="mdi mdi-star-outline"></span>
-                </td>
-                <td>
-                    <p class="text-sm">+62 857 1234 3214</p>
-                </td>
-                <td>
-                    <span class="status-btn close-btn">Disactive</span>
-                </td>
-                <td>
-                    <p class="text-sm">2-Mei-2023</p>
-                </td>
-                <td>
-                    <div class="action justify-content-end">
-                        <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
-                            <li class="dropdown-item">
-                                <a href="#0" class="text-gray">Edit</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#0" class="text-gray">Add Facilities</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#0" class="text-gray">Switch Status</a>
-                            </li>
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
-        <!-- End Table -->
-    </div>
-</div>
-</div>
 </section>
 
 <!-- Edit Hotel -->
@@ -376,8 +337,44 @@
     </div>
 </div>
 
+<!--Delete Hotel-->
+<div class="warning-modal">
+    <div class="modal fade" id="@($"delete")" tabindex="-1" aria-hidden="true" role="dialog" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-style warning-card text-center">
+                <div class="modal-body">
+                    <div class="icon text-danger mb-20">
+                        <i class="lni lni-warning"></i>
+                    </div>
+                    <div class="content mb-30">
+                        <h3 class="mb-15">
+                            Anda akan menghapus Review ini?
+                        </h3>
+                        <p class="text-sm text-medium">
+                            Cancel untuk Membatalkan
+                        </p>
+                    </div>
+                    <div class="action d-flex flex-wrap justify-content-center">
+                        <button type="button" data-bs-dismiss="modal" class="main-btn dark-btn-outline btn-hover m-1">
+                            Cancel
+                        </button>
+                        <button data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @code
 {
     [Parameter]
     public int id { get; set; }
+
+    string phoneNumber = "+62 857 0718 016";
+
+
 }
