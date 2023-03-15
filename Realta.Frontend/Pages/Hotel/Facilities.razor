@@ -46,9 +46,9 @@
                     <p>
                         <span class="mdi mdi-star"></span>
                         <span class="mdi mdi-star"></span>
+                        <span class="mdi mdi-star-half-full"></span>
                         <span class="mdi mdi-star"></span>
                         <span class="mdi mdi-star"></span>
-                        <span class="mdi mdi-star-outline"></span>
                     </p>
                 </div>
             </div>
@@ -92,8 +92,7 @@
                         </th>
                         <th class="min-width">
                             <h6 class="text-sm text-medium text-center">
-                                Room Number
-
+                                Expose Price
                             </h6>
                         </th>
                         <th class="min-width">
@@ -128,7 +127,7 @@
                         </th>
                         <th>
                             <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
-                                <a href="#0" class="main-btn primary-btn-outline rounded-btn p-2">
+                                <a class="main-btn primary-btn-outline rounded-btn p-2">
                                     <i class="mdi mdi-home-plus"></i> Add
                                 </a>
                             </div>
@@ -149,7 +148,22 @@
                                 <p class="text-sm text-center">Facility Sample @i</p>
                             </td>
                             <td>
-                                <p class="text-sm text-center">UQ-@i</p>
+                                @{
+                                    int exposeRandNumber = new Random().Next(1, 4);
+                                    if (exposeRandNumber == 1)
+                                    {
+                                        <span class="status-btn success-btn">Low Price</span>
+                                    }
+                                    else if (exposeRandNumber == 2)
+                                    {
+                                        <span class="status-btn active-btn">Rate Price</span>
+                                    }
+                                    else if(exposeRandNumber == 3)
+                                    {
+                                        <span class="status-btn warning-btn">High Price</span>
+                                    }
+                                    
+                                }
                             </td>
                             <td>
                                 <p class="text-sm text-center">2 May 2022</p>
@@ -176,10 +190,14 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
                                         <li class="dropdown-item">
-                                            <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                                            <a href="/hotels/1/facility/2/History" class="text-gray">History</a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a href="/hotels/1/facility" class="text-gray">History</a>
+                                            @* <a href="/hotels/1/facility/2/Details" class="text-gray">Details</a> *@
+                                            <a href="/hotel" class="text-gray">Details</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">

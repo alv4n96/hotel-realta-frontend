@@ -46,9 +46,9 @@
                     <p>
                         <span class="mdi mdi-star"></span>
                         <span class="mdi mdi-star"></span>
+                        <span class="mdi mdi-star-half-full"></span>
                         <span class="mdi mdi-star"></span>
                         <span class="mdi mdi-star"></span>
-                        <span class="mdi mdi-star-outline"></span>
                     </p>
                 </div>
             </div>
@@ -124,25 +124,25 @@
                                 <p class="text-sm text-center">Hotel @i ini memang yang terbaik, baru pertama di ho... </p>
                             </td>
                             <td class="text-center">
-                                
-                            @{
-                                int randomNum = new Random().Next(0, 6);
-                            }
-                            @for (int starNumber = 1; starNumber <= 5; starNumber++)
-                            {
-                                if ((randomNum - starNumber) < 1 && (randomNum - starNumber) > 0)
-                                {
-                                    <span class="mdi mdi-star-half-full text-center"></span>
+
+                                @{
+                                    int randomNum = new Random().Next(0, 6);
                                 }
-                                else if ((randomNum - starNumber) < 0)
+                                @for (int starNumber = 1; starNumber <= 5; starNumber++)
                                 {
-                                    <span class="mdi mdi-star-outline text-center"></span>
+                                    if ((randomNum - starNumber) < 1 && (randomNum - starNumber) > 0)
+                                    {
+                                        <span class="mdi mdi-star-half-full text-center"></span>
+                                    }
+                                    else if ((randomNum - starNumber) < 0)
+                                    {
+                                        <span class="mdi mdi-star-outline text-center"></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="mdi mdi-star text-center"></span>
+                                    }
                                 }
-                                else
-                                {
-                                    <span class="mdi mdi-star text-center"></span>
-                                }
-                            }
 
                             </td>
                             <td>
@@ -155,10 +155,7 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
                                         <li class="dropdown-item">
-                                            <a href="/hotels/1/facility" class="text-gray">Detail</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                                            <a href="/hotel" class="text-gray">Detail</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">
