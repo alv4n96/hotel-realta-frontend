@@ -1,5 +1,7 @@
 ﻿@page "/hotel/{id:int}/facility"
 
+<PageTitle>Hotel Facility</PageTitle>
+
 <section class="table-components">
     <div class="container-fluid">
         <div class="title-wrapper pt-30">
@@ -47,8 +49,8 @@
                         <span class="mdi mdi-star"></span>
                         <span class="mdi mdi-star"></span>
                         <span class="mdi mdi-star-half-full"></span>
-                        <span class="mdi mdi-star"></span>
-                        <span class="mdi mdi-star"></span>
+                        <span class="mdi mdi-star-outline"></span>
+                        <span class="mdi mdi-star-outline"></span>
                     </p>
                 </div>
             </div>
@@ -190,14 +192,17 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
                                         <li class="dropdown-item">
-                                            <a href="/hotels/1/facility/2/History" class="text-gray">History</a>
-                                        </li>
-                                        <li class="dropdown-item">
                                             @* <a href="/hotels/1/facility/2/Details" class="text-gray">Details</a> *@
                                             <a href="/hotel" class="text-gray">Details</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="/hotels/1/facility/2/History" class="text-gray">Price History</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="/hotels/1/facility/2/History" class="text-gray">Upload Photos</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">

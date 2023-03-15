@@ -1,6 +1,9 @@
 ﻿@page "/hotel"
 @using Realta.Frontend.Components.Hotel.Hotels
 
+<PageTitle>Hotel</PageTitle>
+
+
 <section class="table-components">
     <div class="container-fluid">
         <div class="title-wrapper pt-30">
@@ -55,7 +58,8 @@
 
             <!-- End Title -->
             <div class="table-responsive">
-                <HotelsTableStatic/>
+                <HotelsTableStatic />
+                @* <HotelsTable/> *@
                 <!-- End Table -->
             </div>
             <Paging2/>
