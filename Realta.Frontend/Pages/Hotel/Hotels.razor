@@ -1,4 +1,4 @@
-﻿@page "/hotels"
+﻿@page "/hotel"
 @using Realta.Frontend.Components.Hotel.Hotels
 
 <section class="table-components">
@@ -76,28 +76,28 @@
                 <div class="card-style mb-30">
                     <div class="input-style-1">
                         <label>Hotel Name</label>
-                        <input type="text" placeholder="Full Name">
+                        <input type="text" placeholder="Full Name" value="Hotel Realta 20">
                     </div>
 
                     <div class="input-style-1">
                         <label>Phone Number</label>
-                        <input type="text" placeholder="Phone Number">
+                        <input type="text" placeholder="Phone Number" value="+62 857 0718 0167">
                     </div>
 
-                    <div class="select-style-1">
-                        <label>Status</label>
-                        <div class="select-position">
-                            <select>
-                                <option hidden>Choose status hotel</option>
-                                <option value="">Active</option>
-                                <option value="">Disactive</option>
-                            </select>
-                        </div>
-                    </div> <!-- end input -->
+                    @* <div class="select-style-1"> *@
+                    @*     <label>Status</label> *@
+                    @*     <div class="select-position"> *@
+                    @*         <select> *@
+                    @*             $1$ <option hidden>Choose status hotel</option> #1# *@
+                    @*             <option value="">Active</option>     *@
+                    @*             <option value="">Disactive</option> *@
+                    @*         </select> *@
+                    @*     </div> *@
+                    @* </div> <!-- end input --> *@
 
                     <div class="input-style-3">
                         <label>City</label>
-                        <input type="text" placeholder="City">
+                        <input type="text" placeholder="City" value="INDONESIA, JAWA TIMUR, MALANG 65152">
                         <span class="icon mt-30">
                             <i class="lni lni-search-alt"></i>
                         </span>
@@ -105,13 +105,13 @@
 
                     <div class="input-style-1">
                         <label>Address</label>
-                        <textarea placeholder="Address" rows="3"></textarea>
+                        <textarea placeholder="Address" rows="3">JL ABU ALI 20, Kec Haruwi uhuy</textarea>
                     </div>
 
 
                     <div class="input-style-1">
                         <label>Hotel Description</label>
-                        <textarea placeholder="Hotel Description" rows="3"></textarea>
+                        <textarea placeholder="Hotel Description" rows="3">Hotel indah untuk semua anak Bootcamp Limboto</textarea>
                     </div>
                     <!-- end input -->
                 </div>
