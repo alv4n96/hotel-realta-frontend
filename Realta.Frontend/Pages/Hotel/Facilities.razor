@@ -1,216 +1,205 @@
 ﻿@page "/hotel/{hotelid:int}/facilities"
 
+@using Realta.Frontend.Components.Hotel.Facilities
+
 <PageTitle>Hotel Facility</PageTitle>
 
 <section class="table-components">
-    <div class="container-fluid">
-        <div class="title-wrapper pt-30">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="title">
-                        <h2>Facilities @HotelFaciData.Hotels.HotelName</h2>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-md-6">
-                    <div class="breadcrumb-wrapper mb-30">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#0">Hotels</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    Facilities
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-
-                <!-- end col -->
+<div class="container-fluid">
+<div class="title-wrapper pt-30">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="title">
+                <h2>Facilities</h2>
             </div>
-            <!-- end row -->
         </div>
-        <div class="invoice-card card-style mb-30">
-            <div class="invoice-header">
-                <div class="invoice-for">
-
-                            @* <h2 class="mb-10">@HotelFaciData.Select(h => h.Hotels.HotelName)</h2> *@
-                            <h2 class="mb-10"></h2>
-                    <p class="text-sm">
-                        @HotelId
-                    </p>
-                </div>
-                <div class="invoice-date text-end">
-                   
-                </div>
+        <!-- end col -->
+        <div class="col-md-6">
+            <div class="breadcrumb-wrapper mb-30">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/hotels">Hotels</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Facilities
+                        </li>
+                    </ol>
+                </nav>
             </div>
-        </div>    
+        </div>
 
-        <div class="card-style ">
-            <div class="d-flex justify-content-center">
-                <div class="search d-md-flex">
-                    <div class="input-style-3 mx-auto">
-                        <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search Facilities" aria-label="Search" aria-describedby="search-addon"/>
-                        <span class="icon">
-                            <button class="btn 
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+</div>
+
+    <HotelFacilitiesTable HotelData="HotelData"/>
+
+    <div class="card-style ">
+    <div class="d-flex justify-content-center">
+        <div class="search d-md-flex">
+            <div class="input-style-3 mx-auto">
+                <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search Facilities" aria-label="Search" aria-describedby="search-addon"/>
+                <span class="icon">
+                    <button class="btn 
                                                border-0 
                                                lni lni-search-alt
                                                position-absolute top-40 start-50 translate-middle">
-                            </button>
-                        </span>
-                    </div>
-                    <div class="mx-auto">
-                        <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
-                            <i class="mdi mdi-magnify"></i>search
-                        </button>
-                    </div>
-                </div>
+                    </button>
+                </span>
             </div>
-
-            <!-- End Title -->
-            <div class="table-responsive">
-                <table class="table top-selling-table">
-                    <thead>
-                    <tr>
-                        <th>
-                            <h6 class="text-sm text-medium text-center">Id</h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                Facility Name
-                                <i class="lni lni-arrows-vertical"></i>
-                            </h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                Expose Price
-                            </h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                Start Date
-                            </h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                End Date
-                            </h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                Low Price
-                            </h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                Rate Price
-                            </h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                High Price
-                            </h6>
-                        </th>
-                        <th class="min-width">
-                            <h6 class="text-sm text-medium text-center">
-                                Modified Date
-                            </h6>
-                        </th>
-                        <th>
-                            <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
-                                <a class="main-btn primary-btn-outline rounded-btn p-2">
-                                    <i class="mdi mdi-home-plus"></i> Add
-                                </a>
-                            </div>
-                        </th>
-                    </tr>
-                    </thead>
-
-
-                    <tbody>
-
-                    @for (int i = 1; i < 11; i++)
-                    {
-                        <tr>
-                            <td>
-                                <p class="text-sm text-center">@i</p>
-                            </td>
-                            <td>
-                                <p class="text-sm text-center">Facility Sample @i</p>
-                            </td>
-                            <td>
-                                @{
-                                    int exposeRandNumber = new Random().Next(1, 4);
-                                    if (exposeRandNumber == 1)
-                                    {
-                                        <span class="status-btn success-btn">Low Price</span>
-                                    }
-                                    else if (exposeRandNumber == 2)
-                                    {
-                                        <span class="status-btn active-btn">Rate Price</span>
-                                    }
-                                    else if(exposeRandNumber == 3)
-                                    {
-                                        <span class="status-btn warning-btn">High Price</span>
-                                    }
-                                    
-                                }
-                            </td>
-                            <td>
-                                <p class="text-sm text-center">2 May 2022</p>
-                            </td>
-                            <td>
-                                <p class="text-sm text-center">2 June 2022</p>
-                            </td>
-                            <td>
-                                <p class="text-sm text-center">Rp. 150 000</p>
-                            </td>
-                            <td>
-                                <p class="text-sm text-center">Rp. 170 000</p>
-                            </td>
-                            <td>
-                                <p class="text-sm text-center">Rp. 250 000</p>
-                            </td>
-                            <td>
-                                <p class="text-sm text-center">15 Mei 2023</p>
-                            </td>
-                            <td>
-                                <div class="action align-content-center">
-                                    <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="lni lni-more-alt"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
-                                        <li class="dropdown-item">
-                                            @* <a href="/hotels/1/facility/2/Details" class="text-gray">Details</a> *@
-                                            <a href="/hotel" class="text-gray">Details</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a href="/hotels/1/facility/2/History" class="text-gray">Price History</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a href="/hotels/1/facility/2/History" class="text-gray">Upload Photos</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">
-                                                Delete
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                    }
-                    </tbody>
-                </table>
-                <!-- End Table -->
+            <div class="mx-auto">
+                <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
+                    <i class="mdi mdi-magnify"></i>search
+                </button>
             </div>
-            <Paging2/>
         </div>
     </div>
+
+    <!-- End Title -->
+    <div class="table-responsive">
+        <table class="table top-selling-table">
+            <thead>
+            <tr>
+                <th>
+                    <h6 class="text-sm text-medium text-center">Id</h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Facility Name
+                        <i class="lni lni-arrows-vertical"></i>
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Expose Price
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Start Date
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        End Date
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Low Price
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Rate Price
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        High Price
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Modified Date
+                    </h6>
+                </th>
+                <th>
+                    <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
+                        <a class="main-btn primary-btn-outline rounded-btn p-2">
+                            <i class="mdi mdi-home-plus"></i> Add
+                        </a>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+
+
+            <tbody>
+
+            @for (int i = 1; i < 11; i++)
+            {
+                <tr>
+                    <td>
+                        <p class="text-sm text-center">@i</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">Facility Sample @i</p>
+                    </td>
+                    <td>
+                        @{
+                            int exposeRandNumber = new Random().Next(1, 4);
+                            if (exposeRandNumber == 1)
+                            {
+                                <span class="status-btn success-btn">Low Price</span>
+                            }
+                            else if (exposeRandNumber == 2)
+                            {
+                                <span class="status-btn active-btn">Rate Price</span>
+                            }
+                            else if (exposeRandNumber == 3)
+                            {
+                                <span class="status-btn warning-btn">High Price</span>
+                            }
+
+                        }
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">2 May 2022</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">2 June 2022</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">Rp. 150 000</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">Rp. 170 000</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">Rp. 250 000</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">15 Mei 2023</p>
+                    </td>
+                    <td>
+                        <div class="action align-content-center">
+                            <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="lni lni-more-alt"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                                <li class="dropdown-item">
+                                    @* <a href="/hotels/1/facility/2/Details" class="text-gray">Details</a> *@
+                                    <a href="/hotel" class="text-gray">Details</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="/hotels/1/facility/2/History" class="text-gray">Price History</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="/hotels/1/facility/2/History" class="text-gray">Upload Photos</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">
+                                        Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <!-- End Table -->
+    </div>
+    <Paging2/>
+</div>
+</div>
 </section>
 
 <!-- Edit Hotel -->

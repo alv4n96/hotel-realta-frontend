@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Realta.Contract.Models.v1;
 using Realta.Domain.RequestFeatures;
-using Realta.Contract.Models.v1.Facilities;
+using Realta.Contract.Models.v1.Hotels;
 using Realta.Frontend.HttpRepository.Hotel.Facilities;
 using Realta.Frontend.HttpRepository.Hotel.Hotels;
 
@@ -12,17 +13,23 @@ public partial class Facilities
     
     [Inject]
     public IFacilitiesHttpRepository? FaciRepo { get; set; }
+    [Inject]
+    public  IHotelsHttpRepository? HotelRepo { get; set; }
     
     
     [Parameter]
-    public HotelFaciAllDto HotelFaciData { get; set; } = new();
+    public List<FacilitiesDto> FacilitiesData { get; set; } = new();
+
+    public HotelsDto HotelData { get; set; } = new();
     public MetaData MetaData { get; set; } = new();
+
 
     //private HotelsParameters _hotelsParameters = new HotelsParameters();
 
     protected override async Task OnInitializedAsync()
     {
-        HotelFaciData = await FaciRepo.GetFacilities(HotelId);
+        HotelData = await HotelRepo.GetHotelsById(HotelId);
+        FacilitiesData = await FaciRepo.GetFacilities(HotelId);
     }
     
 }

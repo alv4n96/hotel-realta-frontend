@@ -8,7 +8,7 @@ namespace Realta.Frontend.HttpRepository.Hotel.Facilities
 {
     public interface IFacilitiesHttpRepository
     {
-        Task<HotelFaciAllDto> GetFacilities(int hotelId);
+        Task<List<FacilitiesDto>> GetFacilities(int hotelId);
         //Task<PagingResponse<FacilitiesDto>> GetFacilitiesPaging(FacilitiesParameter facilitiesParameter);
     }
 }

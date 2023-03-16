@@ -1,26 +1,26 @@
-﻿<div class="invoice-card card-style mb-30">
-    <div class="invoice-header">
-        <div class="invoice-for">
-            <h2 class="mb-10">@HotelFaci.Select(h => h.Hotels.HotelName)</h2>
-            <p class="text-sm">
-                @HotelFaci.Select(h => h.Hotels.HotelDescription)
-            </p>
-        </div>
-        <div class="invoice-date text-end">
-            <p>
-                @HotelFaci.Select(h => h.Hotels.HotelPhonenumber)
-            </p>
-            <p>
-                @{
-                    IEnumerable<decimal> hotelRatingStar = HotelFaci.Select(h => h.Hotels.HotelRatingStar);
-                    decimal hotelStar = hotelRatingStar.FirstOrDefault();
-                    for (int i = 1; i <= 5; i++)
+﻿@if (HotelData != null)
+{
+    <div class="invoice-card card-style mb-30">
+        <div class="invoice-header">
+            <div class="invoice-for">
+
+                <h2 class="mb-10">@HotelData.HotelName</h2>
+                <p class="text-sm">
+                    @HotelData.HotelDescription
+                </p>
+            </div>
+            <div class="invoice-date text-end">
+                <p>
+                    @HotelData.HotelPhonenumber
+                </p>
+                <p>
+                    @for (int i = 1; i <= 5; i++)
                     {
-                        if ((hotelStar - i) < 1 && (hotelStar - i) > 0)
+                        if ((HotelData.HotelRatingStar - i) < 1 && (HotelData.HotelRatingStar - i) > 0)
                         {
                             <span class="mdi mdi-star-half-full"></span>
                         }
-                        else if ((hotelStar - i) < 0)
+                        else if ((HotelData.HotelRatingStar - i) < 0)
                         {
                             <span class="mdi mdi-star-outline"></span>
                         }
@@ -29,8 +29,34 @@
                             <span class="mdi mdi-star"></span>
                         }
                     }
-                }
-            </p>
+                </p>
+            </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="invoice-card card-style mb-30">
+        <div class="invoice-header">
+            <div class="invoice-for">
+
+                <h2 class="mb-10">HOTEL NOT FOUND!</h2>
+                <p class="text-sm">
+
+                </p>
+            </div>
+            <div class="invoice-date text-end">
+                <p>
+
+                </p>
+                <p>
+                    <span class="mdi mdi-star-outline"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                    <span class="mdi mdi-star-outline"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+}

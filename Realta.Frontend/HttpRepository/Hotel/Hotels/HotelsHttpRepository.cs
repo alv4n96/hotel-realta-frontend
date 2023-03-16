@@ -37,6 +37,22 @@ namespace Realta.Frontend.HttpRepository.Hotel.Hotels
 
         }
 
+        public async Task<HotelsDto?> GetHotelsById(int hotelId)
+        {
+            var response = await _httpClient.GetAsync($"hotels/{hotelId}");
+            var content = await response.Content.ReadAsStringAsync();
+
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new ApplicationException(content);
+            }
+
+            var hotels = JsonSerializer.Deserialize<HotelsDto>(content, _options);
+            
+            return hotels;
+        }
+
         public async Task<PagingResponse<HotelsDto>> GetHotelPaging(HotelsParameters hotelsParameters)
         {
             var queryStringParam = new Dictionary<string, string>

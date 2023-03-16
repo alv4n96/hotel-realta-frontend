@@ -2,7 +2,6 @@
 using Realta.Domain.RequestFeatures;
 using Realta.Contract.Models.v1.Hotels;
 using Realta.Domain.RequestFeatures.HotelParameters;
-using Realta.Frontend.HttpRepository;
 using Realta.Frontend.HttpRepository.Hotel.Hotels;
 
 namespace Realta.Frontend.Pages.Hotel

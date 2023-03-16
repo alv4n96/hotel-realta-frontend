@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Realta.Contract.Models.v1;
 using Realta.Contract.Models.v1.Facilities;
 
 namespace Realta.Frontend.HttpRepository.Hotel.Facilities
@@ -16,7 +17,7 @@ namespace Realta.Frontend.HttpRepository.Hotel.Facilities
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
 
-        public async Task<HotelFaciAllDto> GetFacilities(int hotelId)
+        public async Task<List<FacilitiesDto>> GetFacilities(int hotelId)
         {
             //Call api end point, e.g :https://localhost:7068/api/hotels 
             var response = await _httpClient.GetAsync($"facilities/{hotelId}/facilities");
@@ -28,7 +29,7 @@ namespace Realta.Frontend.HttpRepository.Hotel.Facilities
                 throw new ApplicationException(content);
             }
 
-            var facilities = JsonSerializer.Deserialize<HotelFaciAllDto>(content, _options);
+            var facilities = JsonSerializer.Deserialize<List<FacilitiesDto>>(content, _options);
 
             
             return facilities;
