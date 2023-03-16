@@ -1,5 +1,153 @@
-﻿<h3>FacilitiesTable</h3>
+﻿@using System.Globalization
+<div class="table-responsive">
+    <table class="table top-selling-table">
+        <thead>
+        <tr>
+            <th>
+                <h6 class="text-sm text-medium text-center">#</h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Facility Name
+                    <i class="lni lni-arrows-vertical"></i>
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Expose Price
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Start Date
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    End Date
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Low Price
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Rate Price
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    High Price
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Modified Date
+                </h6>
+            </th>
+            <th>
+                <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
+                    <a class="main-btn primary-btn-outline rounded-btn p-2">
+                        <i class="mdi mdi-home-plus"></i> Add
+                    </a>
+                </div>
+            </th>
+        </tr>
+        </thead>
 
-@code {
-    
-}
+
+        <tbody>
+
+
+        @if (FacilitiesData.Count() > 0)
+        {
+            var index = 1;
+            foreach (var faci in FacilitiesData)
+            {
+                <tr>
+                    <td>
+                        <p class="text-sm text-center">@(index++)</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">@faci.FaciName</p>
+                    </td>
+                    <td>
+                        @{
+                            if (faci.FaciExposePrice == 1)
+                            {
+                                <span class="status-btn success-btn text-center">Low Price</span>
+                            }
+                            else if (faci.FaciExposePrice == 2)
+                            {
+                                <span class="status-btn active-btn text-center">Rate Price</span>
+                            }
+                            else if (faci.FaciExposePrice == 3)
+                            {
+                                <span class="status-btn warning-btn text-center">High Price</span>
+                            }
+
+                        }
+                    </td>
+                    <td class="ml-50 mr-50">
+                        <p class="text-sm text-center">@((faci.FaciStartdate).ToString("dd MMMM yyyy"))</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">@((faci.FaciEndDate).ToString("dd MMMM yyyy"))</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">@faci.FaciLowPrice.ToString("C",new CultureInfo("id-ID"))</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">@faci.FaciRatePrice.ToString("C",new CultureInfo("id-ID"))</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">@faci.FaciHighPrice.ToString("C",new CultureInfo("id-ID"))</p>
+                    </td>
+                    <td>
+                        <p class="text-sm text-center">@((faci.FaciModifiedDate).ToString("dd MMMM yyyy"))</p>
+                    </td>
+                    <td>
+                        <div class="action align-content-center">
+                            <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="lni lni-more-alt"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                                <li class="dropdown-item">
+                                    <a href="/hotel" class="text-gray">Details</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="/hotel/{HotelId}/facility/@faci.FaciId/History" class="text-gray">Price History</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-gray">Upload Photos</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete">
+                                        Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9" class="text-center text-gray">
+                    <h6>
+                        THERE AREN'T ANY FACILITIES FOR THIS HOTEL YET
+                    </h6>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <!-- End Table -->
+</div>
