@@ -1688,3 +1688,11 @@ D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\obj\Debug\net6.0\Realta.Fronte
 D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\obj\Debug\net6.0\refint\Realta.Frontend.dll
 D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\obj\Debug\net6.0\Realta.Frontend.pdb
 D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\obj\Debug\net6.0\ref\Realta.Frontend.dll
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\bin\Debug\net6.0\wwwroot\_framework\Realta.Domain.dll
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\bin\Debug\net6.0\wwwroot\_framework\Realta.Domain.pdb
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\bin\Debug\net6.0\wwwroot\_framework\Realta.Domain.dll.gz
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\bin\Debug\net6.0\wwwroot\_framework\Realta.Domain.pdb.gz
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\bin\Debug\net6.0\Realta.Domain.dll
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\bin\Debug\net6.0\Realta.Domain.pdb
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\obj\Debug\net6.0\build-gz\agZFoSw+.gz
+D:\C#_PROJECTS\HotelRealtaStaging\Realta.Frontend\obj\Debug\net6.0\build-gz\nxS46WJh.gz

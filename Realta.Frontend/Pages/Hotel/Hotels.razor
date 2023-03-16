@@ -1,4 +1,6 @@
 ﻿@page "/hotel"
+
+@using Realta.Frontend.Components.Hotel
 @using Realta.Frontend.Components.Hotel.Hotels
 
 <PageTitle>Hotel</PageTitle>
@@ -39,30 +41,23 @@
             <div class="d-flex justify-content-center">
                 <div class="search d-md-flex">
                     <div class="input-style-3 mx-auto">
-                        <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search Hotel" aria-label="Search" aria-describedby="search-addon"/>
-                        <span class="icon">
-                            <button class="btn 
-                                               border-0 
-                                               lni lni-search-alt
-                                               position-absolute top-40 start-50 translate-middle">
-                            </button>
-                        </span>
-                    </div>
-                    <div class="mx-auto">
-                        <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
-                            <i class="mdi mdi-home-search-outline"></i>search
-                        </button>
+                        <Search OnSearchChanged="SearchChange" NameOfSearch="Hotel"/>
                     </div>
                 </div>
             </div>
 
             <!-- End Title -->
             <div class="table-responsive">
-                <HotelsTableStatic />
-                @* <HotelsTable/> *@
+                @* <HotelsTableStatic /> *@
+                <HotelsTable DataHotel="HotelList"/>
                 <!-- End Table -->
             </div>
-            <Paging2/>
+            <div class="row">
+                <div class="col">
+                    @*Place for pagination*@
+                    <Pagination MetaData="MetaData" Spread="1" SelectedPage="SelectedPage" />
+                </div>
+            </div>
         </div>
 
     </div>

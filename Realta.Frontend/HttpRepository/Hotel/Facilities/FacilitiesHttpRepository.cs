@@ -1,29 +1,25 @@
 ﻿using System.Text.Json;
-using Microsoft.AspNetCore.WebUtilities;
-using Realta.Domain.RequestFeatures;
-using Realta.Contract.Models.v1.Hotels;
-using Realta.Domain.RequestFeatures.HotelParameters;
-using Realta.Frontend.Features;
+using Realta.Contract.Models.v1.Facilities;
 
-namespace Realta.Frontend.HttpRepository.Hotel.Hotels
+namespace Realta.Frontend.HttpRepository.Hotel.Facilities
 {
-    public class HotelsHttpRepository : IHotelsHttpRepository
+    public class FacilitiesHttpRepository : IFacilitiesHttpRepository
     {
 
         private readonly HttpClient _httpClient;
         private readonly JsonSerializerOptions _options;
 
 
-        public HotelsHttpRepository(HttpClient httpClient)
+        public FacilitiesHttpRepository(HttpClient httpClient)
         {
             _httpClient = httpClient;
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
 
-        public async Task<List<HotelsDto>> GetHotels()
+        public async Task<HotelFaciAllDto> GetFacilities(int hotelId)
         {
             //Call api end point, e.g :https://localhost:7068/api/hotels 
-            var response = await _httpClient.GetAsync("hotels/");
+            var response = await _httpClient.GetAsync($"facilities/{hotelId}/facilities");
             var content = await response.Content.ReadAsStringAsync();
 
 
@@ -32,22 +28,26 @@ namespace Realta.Frontend.HttpRepository.Hotel.Hotels
                 throw new ApplicationException(content);
             }
 
-            var hotels = JsonSerializer.Deserialize<List<HotelsDto>>(content, _options);
-            return hotels;
+            var facilities = JsonSerializer.Deserialize<HotelFaciAllDto>(content, _options);
 
+            
+            return facilities;
         }
 
-        public async Task<PagingResponse<HotelsDto>> GetHotelPaging(HotelsParameters hotelsParameters)
+
+/*--
+        public Task<PagingResponse<FacilitiesDto>> GetFacilitiesPaging(FacilitiesParameter facilitiesParameter)
         {
+        
             var queryStringParam = new Dictionary<string, string>
             {
-                ["pageNumber"] = hotelsParameters.PageNumber.ToString(),
-                ["searchTerm"] = hotelsParameters.SearchTerm == null ? "" : hotelsParameters.SearchTerm
-                // ["orderBy"] = hotelsParameters.OrderBy
+                ["pageNumber"] = facilitiesParameter.PageNumber.ToString(),
+                ["searchTerm"] = facilitiesParameter.SearchTerm == null ? "" : facilitiesParameter.SearchTerm
+                // ["orderBy"] = facilitiesParameter.OrderBy
             };
 
 
-            var response = await _httpClient.GetAsync(QueryHelpers.AddQueryString("hotels/pageList",queryStringParam));
+            var response = await _httpClient.GetAsync(QueryHelpers.AddQueryString("facilities/{:id}/facilities/pageList",queryStringParam));
             var content = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
@@ -63,5 +63,7 @@ namespace Realta.Frontend.HttpRepository.Hotel.Hotels
 
             return pagingResponse;
         }
+        --*/
     }
+    
 }

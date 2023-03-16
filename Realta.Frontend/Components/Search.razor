@@ -1,0 +1,12 @@
+﻿<section style="margin-bottom: 10px">
+    @if (NameOfSearch == null)
+    {
+        <input type="text" class="form-control" placeholder="Search by name"
+               @bind-value="@SearchTerm" @bind-value:event="oninput" @onkeyup="async () => await OnSearchChanged.InvokeAsync(SearchTerm)"/>    
+    }
+    else
+    {
+        <input type="text" class="form-control" placeholder="Search by @NameOfSearch name"
+               @bind-value="@SearchTerm" @bind-value:event="oninput" @onkeyup="async () => await OnSearchChanged.InvokeAsync(SearchTerm)"/>
+    }
+</section>

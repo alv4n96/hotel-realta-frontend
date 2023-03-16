@@ -597,6 +597,16 @@
         "runtime": {
           "bin/placeholder/Realta.Contract.dll": {}
         }
+      },
+      "Realta.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Realta.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Realta.Domain.dll": {}
+        }
       }
     },
     "net6.0/browser-wasm": {
@@ -1188,6 +1198,16 @@
         },
         "runtime": {
           "bin/placeholder/Realta.Contract.dll": {}
+        }
+      },
+      "Realta.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Realta.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Realta.Domain.dll": {}
         }
       }
     }
@@ -2124,6 +2144,11 @@
       "type": "project",
       "path": "../../RealtaHotelWebApi/Realta.Contract/Realta.Contract.csproj",
       "msbuildProject": "../../RealtaHotelWebApi/Realta.Contract/Realta.Contract.csproj"
+    },
+    "Realta.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../RealtaHotelWebApi/Realta.Domain/Realta.Domain.csproj",
+      "msbuildProject": "../../RealtaHotelWebApi/Realta.Domain/Realta.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2133,6 +2158,7 @@
       "Microsoft.AspNetCore.WebUtilities >= 2.2.0",
       "Microsoft.Extensions.Http >= 7.0.0",
       "Realta.Contract >= 1.0.0",
+      "Realta.Domain >= 1.0.0",
       "System.Net.Http.Json >= 7.0.0"
     ]
   },
@@ -2170,6 +2196,9 @@
           "projectReferences": {
             "D:\\C#_PROJECTS\\RealtaHotelWebApi\\Realta.Contract\\Realta.Contract.csproj": {
               "projectPath": "D:\\C#_PROJECTS\\RealtaHotelWebApi\\Realta.Contract\\Realta.Contract.csproj"
+            },
+            "D:\\C#_PROJECTS\\RealtaHotelWebApi\\Realta.Domain\\Realta.Domain.csproj": {
+              "projectPath": "D:\\C#_PROJECTS\\RealtaHotelWebApi\\Realta.Domain\\Realta.Domain.csproj"
             }
           }
         }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zgD05Q0GD94z0Pa+iNJaf/AAxBk+Sl+RJ0cSTkIgnqs=",
+  "Hash": "5UpJU3auG5im7gguyOA9SXOu0R6nSpif+EAsSKrOPAs=",
   "Source": "Realta.Frontend",
   "BasePath": "/",
   "Mode": "Root",
@@ -763,6 +763,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\C#_PROJECTS\\RealtaHotelWebApi\\Realta.Contract\\bin\\Debug\\net6.0\\Realta.Contract.pdb"
+    },
+    {
+      "Identity": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Realta.Domain.dll",
+      "SourceId": "Realta.Frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Realta.Domain.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\C#_PROJECTS\\RealtaHotelWebApi\\Realta.Domain\\bin\\Debug\\net6.0\\Realta.Domain.dll"
+    },
+    {
+      "Identity": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Realta.Domain.pdb",
+      "SourceId": "Realta.Frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Realta.Domain.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\C#_PROJECTS\\RealtaHotelWebApi\\Realta.Domain\\bin\\Debug\\net6.0\\Realta.Domain.pdb"
     },
     {
       "Identity": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Realta.Frontend.dll",
@@ -4284,6 +4318,23 @@
       "OriginalItemSpec": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.DependencyInjection.dll"
     },
     {
+      "Identity": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\obj\\Debug\\net6.0\\build-gz\\agZFoSw+.gz",
+      "SourceId": "Realta.Frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Realta.Domain.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Realta.Domain.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Realta.Domain.dll"
+    },
+    {
       "Identity": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\obj\\Debug\\net6.0\\build-gz\\AiINZps2.gz",
       "SourceId": "Realta.Frontend",
       "SourceType": "Computed",
@@ -5625,6 +5676,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Numerics.dll"
+    },
+    {
+      "Identity": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\obj\\Debug\\net6.0\\build-gz\\nxS46WJh.gz",
+      "SourceId": "Realta.Frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Realta.Domain.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Realta.Domain.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Realta.Domain.pdb"
     },
     {
       "Identity": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\obj\\Debug\\net6.0\\build-gz\\nYFmymRm.gz",

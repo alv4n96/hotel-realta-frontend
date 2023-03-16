@@ -15,13 +15,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Components\Hotel\Facilities" />
       <Folder Include="Pages\Purchasing" />
       <Folder Include="wwwroot\vendor" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\RealtaHotelWebApi\Realta.Contract\Realta.Contract.csproj" />
+      <ProjectReference Include="..\..\RealtaHotelWebApi\Realta.Domain\Realta.Domain.csproj" />
     </ItemGroup>
 
 </Project>

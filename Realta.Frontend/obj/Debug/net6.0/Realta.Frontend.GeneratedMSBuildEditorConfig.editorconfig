@@ -24,6 +24,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZWxldGVNb2RhbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Hotel/Facilities/FacilitiesTable.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb3RlbFxGYWNpbGl0aWVzXEZhY2lsaXRpZXNUYWJsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Hotel/Facilities/HotelFacilitiesTable.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb3RlbFxGYWNpbGl0aWVzXEhvdGVsRmFjaWxpdGllc1RhYmxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Hotel/Hotels/HotelsTable.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb3RlbFxIb3RlbHNcSG90ZWxzVGFibGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,12 +40,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb3RlbFxIb3RlbHNcSG90ZWxzVGFibGVTdGF0aWMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Hotel/Pagination.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb3RlbFxQYWdpbmF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Paging.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdpbmcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Paging2.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdpbmcyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Components/Search.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTZWFyY2gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#_PROJECTS/HotelRealtaStaging/Realta.Frontend/Pages/Hotel/Facilities.razor]

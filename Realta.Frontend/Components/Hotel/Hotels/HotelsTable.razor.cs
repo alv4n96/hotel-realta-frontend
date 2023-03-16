@@ -7,5 +7,6 @@ namespace Realta.Frontend.Components.Hotel.Hotels
    {
       [Parameter] 
       public  List<HotelsDto> DataHotel { get; set; }
+      
    } 
 }

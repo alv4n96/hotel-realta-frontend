@@ -2,37 +2,37 @@
     <thead>
     <tr>
         <th>
-            <h6 class="text-sm text-medium">Id</h6>
+            <h6 class="text-sm text-medium text-center">Id</h6>
         </th>
         <th class="min-width">
-            <h6 class="text-sm text-medium">
+            <h6 class="text-sm text-medium text-center">
                 Hotel Name
                 <i class="lni lni-arrows-vertical"></i>
             </h6>
         </th>
         <th class="min-width">
-            <h6 class="text-sm text-medium">
+            <h6 class="text-sm text-medium text-center">
                 Rating Star
             </h6>
         </th>
         <th class="min-width">
-            <h6 class="text-sm text-medium">
+            <h6 class="text-sm text-medium text-center">
                 Phone Number
             </h6>
         </th>
         <th class="min-width">
-            <h6 class="text-sm text-medium">
+            <h6 class="text-sm text-medium text-center">
                 Status
             </h6>
         </th>
         <th class="min-width">
-            <h6 class="text-sm text-medium">
+            <h6 class="text-sm text-medium text-center">
                 Modified Date <i class="lni lni-arrows-vertical"></i>
             </h6>
         </th>
         <th>
             <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel">
-                <a href="#0" class="main-btn primary-btn-outline rounded-btn p-2">
+                <a class="main-btn primary-btn-outline rounded-btn p-2">
                     <i class="mdi mdi-home-plus"></i> Add
                 </a>
             </div>
@@ -99,7 +99,10 @@
                                 <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="facility" class="text-gray">Add Facilities</a>
+                                <a href="/hotel/@hotel.HotelId/facilities" class="text-gray">Add Facilities</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="/hotel/@hotel.HotelId/reviews" class="text-gray">Reviews</a>
                             </li>
                             <li class="dropdown-item">
                                 <a class="text-gray" data-bs-toggle="modal" data-bs-target="#switchstatushotel">Switch Status</a>
@@ -114,9 +117,9 @@
     {
         <tr>
             <td colspan="7" class="text-center text-gray">
-                <h1>
+                <h6>
                     DATA NOT FOUND
-                </h1>
+                </h6>
             </td>
         </tr>
     }

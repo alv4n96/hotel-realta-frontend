@@ -201,14 +201,16 @@
       "netstandard.dll": "sha256-6NXprR7wyUZxpdXxaSPHSoC5uOL5UCc7bsZG3TSuVxE=",
       "System.Private.CoreLib.dll": "sha256-igtwZSR0\/lrbmwL\/XiTsEkIeSL+736GHTZPReYguZCQ=",
       "Realta.Contract.dll": "sha256-WDBNw48DsDxCtDI6LC9Q1dYsSDvdSTmyebIraRrOO7Y=",
-      "Realta.Frontend.dll": "sha256-BFikVFXN472EwwH4EGX7BR3QwJ37BiFJjBF61vRWB5M="
+      "Realta.Domain.dll": "sha256-PNnRz0XaUjCegKsUGyy+JRvFeYEFaXFw8dHx7X\/ZBM8=",
+      "Realta.Frontend.dll": "sha256-fqw+nj7Kqs9dMWahlW0OCL0fHUl047+GZHeMe\/upzfI="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "Realta.Contract.pdb": "sha256-\/rwXdeKTaBT1rt2ZC9L4zGap8PF7Q5SR0M8s+XFfpwY=",
-      "Realta.Frontend.pdb": "sha256-ycYzbowWFRp\/FRL4Cjj0s+NbhtZmVYF2Os0X6E4mkfQ="
+      "Realta.Domain.pdb": "sha256-ZI+FhHXZoTMySLraRC5p0gdec5x1Z+sKs76UZ6zLIN8=",
+      "Realta.Frontend.pdb": "sha256-o4kfxTC3FUlyeSWfr2Kz0H\/IBtDwX0kl746Dj6IgkHU="
     },
     "runtime": {
       "dotnet.6.0.14.ed2hutul4o.js": "sha256-54cJ6JdGhGbKaLWxHfRYzYbuyRq2wlK\/ZDzfSXD3FEs=",
