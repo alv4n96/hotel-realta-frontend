@@ -1,243 +1,577 @@
 ﻿@page "/hotel/{hotelid:int}/facilities"
 
 @using Realta.Frontend.Components.Hotel.Facilities
+@using Realta.Frontend.Components.Hotel
+@using System.Globalization
 
 <PageTitle>Hotel Facility</PageTitle>
 
 <section class="table-components">
-    <div class="container-fluid">
-        <div class="title-wrapper pt-30">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="title">
-                        <h2>Facilities</h2>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-md-6">
-                    <div class="breadcrumb-wrapper mb-30">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="/hotel">Hotels</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    Facilities
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-
-                <!-- end col -->
+<div class="container-fluid">
+<div class="title-wrapper pt-30">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="title">
+                <h2>Facilities</h2>
             </div>
-            <!-- end row -->
+        </div>
+        <!-- end col -->
+        <div class="col-md-6">
+            <div class="breadcrumb-wrapper mb-30">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/hotel">Hotels</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Facilities
+                        </li>
+                    </ol>
+                </nav>
+            </div>
         </div>
 
-        <HotelFacilitiesTable HotelData="HotelData"/>
-
-        <div class="card-style ">
-            <div class="d-flex justify-content-center">
-                <div class="search d-md-flex">
-                    <div class="input-style-3 mx-auto">
-                        <Search OnSearchChanged="SearchChange" NameOfSearch="Facilities"/>
-                    </div>
-                </div>
-            </div>
-
-            <!-- End Title -->
-            <FacilitiesTable HotelId="HotelId" FacilitiesData="FacilitiesData"/>
-
-            <Pagination MetaData="MetaData" Spread="1" SelectedPage="SelectedPage"/>
-        </div>
+        <!-- end col -->
     </div>
+    <!-- end row -->
+</div>
+
+<CardHotel HotelData="HotelData"/>
+
+<div class="card-style ">
+
+
+<TableToolbar Placeholder="Facility Name..."
+              OnSearchChanged="SearchChange"
+              OnPageSizeChanged="PageSizeChanged"/>
+<!-- Start Reviews Table -->
+
+
+<div class="table-responsive dataTable-container">
+    <table class="table dataTable-table">
+        <thead>
+        <tr>
+            <th data-sortable class="@(_facilitiesParameters.OrderBy switch 
+                                     { "FaciName desc" => "desc", "FaciName asc" => "asc", _ => ""})"
+                onclick="@(() => SortChanged("FaciName"))">
+                <a class="dataTable-sorter">
+                    <h6>
+                        Facility Name
+                    </h6>
+                </a>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Room Number
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Max Vacant
+                </h6>
+            </th>
+            @* <th class="min-width"> *@
+            @*     <h6 class="text-sm text-medium text-center"> *@
+            @*         Expose Price *@
+            @*     </h6> *@
+            @* </th> *@
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Start End Date
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Range Price
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Disc.
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Rate Price
+                </h6>
+            </th>
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Tax
+                </h6>
+            </th>
+            <th>
+                <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createFacility">
+                    <a class="main-btn primary-btn-outline rounded-btn p-2" @onclick="Clear">
+                        <i class="mdi mdi-home-plus"></i> Add
+                    </a>
+                </div>
+            </th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+
+
+        @if (FacilitiesData.Count() > 0)
+        {
+            foreach (var faci in FacilitiesData)
+            {
+                <tr>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciName</p>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciRoomNumber</p>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciMaxNumber @faci.FaciMeasureUnit</p>
+                        </span>
+                    </td>
+                    @* <td class="text-center"> *@
+                    @*     @{ *@
+                    @*         if (faci.FaciExposePrice == 1) *@
+                    @*         { *@
+                    @*             <span style="white-space: nowrap" class="status-btn success-btn text-center">Low Price</span> *@
+                    @*         } *@
+                    @*         else if (faci.FaciExposePrice == 2) *@
+                    @*         { *@
+                    @*             <span style="white-space: nowrap" class="status-btn active-btn text-center">Rate Price</span> *@
+                    @*         } *@
+                    @*         else if (faci.FaciExposePrice == 3) *@
+                    @*         { *@
+                    @*             <span style="white-space: nowrap" class="status-btn warning-btn text-center">High Price</span> *@
+                    @*         } *@
+                    @* *@
+                    @*     } *@
+                    @* </td> *@
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@((faci.FaciStartdate).ToString("dd MMMM yyyy"))</p>
+                        </span>
+                        <br/>
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@((faci.FaciEndDate).ToString("dd MMMM yyyy"))</p>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciLowPrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                        </span>
+                        <br/>
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciHighPrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+                        @if (faci.FaciDiscount != 0)
+                        {
+                            <p class="text-sm text-center">@(((decimal)faci.FaciDiscount).ToString("N0")) %</p>
+                        }
+                        else
+                        {
+                            <p class="text-sm text-center"> - </p>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciRatePrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+                        @if (faci.FaciTaxRate != 0)
+                        {
+                            <p class="text-sm text-center">@(((decimal)faci.FaciTaxRate).ToString("N0")) %</p>
+                        }
+                        else
+                        {
+                            <p class="text-sm text-center"> - </p>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <div class="action align-content-center">
+                            <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="lni lni-more-alt"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                                <li class="dropdown-item">
+                                    <a href="/hotel" class="text-gray">Details</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-gray" data-bs-toggle="modal" data-bs-target="#@($"editFacility")" @onclick="() => UpdateFacility(faci)">Edit</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="/hotel/@HotelId/facility/@faci.FaciId/History" class="text-gray">Price History</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-gray" data-bs-toggle="modal" data-bs-target="#uploadphotos">Upload Photos</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="text-danger" data-bs-toggle="modal" data-bs-target="#@($"delete{@faci.FaciId}")">
+                                        Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9" class="text-center text-gray">
+                    <h6>
+                        THERE AREN'T ANY FACILITIES FOR THIS HOTEL YET
+                    </h6>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <!-- End Table -->
+</div>
+<!-- End Reviews Table -->
+
+
+<div class="row">
+    <div class="col">
+        @*Place for pagination*@
+        <TablePagination MetaData="MetaData" Spread="1" SelectedPage="SelectedPage"/>
+    </div>
+</div>
+
+
+</div>
+</div>
 </section>
 
 <!-- Edit Hotel -->
-<div class="modal fade" id="edithotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="edithotelLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="edithotelLabel">Edit Hotel</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-style mb-30">
-                    <div class="input-style-1">
-                        <label>Hotel Name</label>
-                        <input type="text" placeholder="Full Name">
-                    </div>
+<div class="warning-modal">
+    <div class="modal modal-lg fade" id="editFacility" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
 
-                    <div class="input-style-1">
-                        <label>Phone Number</label>
-                        <input type="text" placeholder="Phone Number">
-                    </div>
-
-                    <div class="select-style-1">
-                        <label>Status</label>
-                        <div class="select-position">
-                            <select>
-                                <option hidden>Choose status hotel</option>
-                                <option value="">Active</option>
-                                <option value="">Disactive</option>
-                            </select>
-                        </div>
-                    </div> <!-- end input -->
-
-                    <div class="input-style-3">
-                        <label>City</label>
-                        <input type="text" placeholder="City">
-                        <span class="icon mt-30">
-                            <i class="lni lni-search-alt"></i>
-                        </span>
-                    </div>
-
-                    <div class="input-style-1">
-                        <label>Address</label>
-                        <textarea placeholder="Address" rows="3"></textarea>
-                    </div>
+            <EditForm autocomplete="off" class="modal-content card-style" Model="_facilities" OnValidSubmit="OnUpdateConfirm">
+                <DataAnnotationsValidator/>
 
 
-                    <div class="input-style-1">
-                        <label>Hotel Description</label>
-                        <textarea placeholder="Hotel Description" rows="3"></textarea>
-                    </div>
-                    <!-- end input -->
+                <!-- Model="_venpro" OnValidSubmit="OnUpdateConfirmed" -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditLabel">Add Facilities</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
+
+                <div class="modal-body px-0">
+                    <div class="row">
+
+                        <div class="input-style-2 col-6 rounded-sm">
+                            <label for="FaciName">Facility Name</label>
+                            <div class="select-position">
+                                <InputText placeholder="Facility Name" id="FaciName    " @bind-Value="_facilities.FaciName"/>
+                                <ValidationMessage For="@(() => _facilities.FaciName)"/>
+                            </div>
+                        </div>
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="categories" class="form-label">Categories</label>
+                            <InputSelect id="categories" @bind-Value="_facilities.FaciCagroId" class="form-control">
+                                <option hidden>Choose Category Facility</option>
+                                @foreach (var itemCagro in CategoryGroupData)
+                                {
+                                    <option value="@itemCagro.CagroId">@itemCagro.CagroId - @itemCagro.CagroName</option>
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => _facilities.FaciCagroId)"/>
+                        </div>
+
+                        <div class="input-style-2 rounded-sm">
+                            <label for="Facidesc">Facility Description</label>
+                            <div class="select-position">
+                                <InputTextArea placeholder="Facility Description" id="Facidesc" @bind-Value="_facilities.FaciDescription"/>
+                                <ValidationMessage For="@(() => _facilities.FaciDescription)"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-style-1 col-3 rounded-sm">
+                                <label for="roomnumber">Room Number</label>
+                                <InputText placeholder="Room Number" id="roomnumber" @bind-Value="_facilities.FaciRoomNumber"/>
+                                <ValidationMessage For="@(() => _facilities.FaciRoomNumber)"/>
+                            </div>
+                            <div class="input-style-1 col-3 rounded-sm">
+                                <label for="maxvacant">Max Person</label>
+                                <InputNumber placeholder="Max Vacant" id="maxvacant" @bind-Value="_facilities.FaciMaxNumber"/>
+                                <ValidationMessage For="@(() => _facilities.FaciMaxNumber)"/>
+                            </div>
+                        </div>
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="lowprice">Low Price</label>
+                            <InputNumber placeholder="Low Price" id="lowprice" @bind-Value="_facilities.FaciLowPrice"/>
+                            <ValidationMessage For="@(() => _facilities.FaciLowPrice)"/>
+                        </div>
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="highprice">High Price</label>
+                            <InputNumber placeholder="High Price" id="highprice" @bind-Value="_facilities.FaciHighPrice"/>
+                            <ValidationMessage For="@(() => _facilities.FaciHighPrice)"/>
+                        </div>
+
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="disc">Disc %</label>
+                            <InputNumber placeholder="Discount Price" id="disc" @bind-Value="_facilities.FaciDiscount"/>
+                            <ValidationMessage For="@(() => _facilities.FaciDiscount)"/>
+                        </div>
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="tax">Tax %</label>
+                            <InputNumber placeholder="Tax Price" id="tax" @bind-Value="_facilities.FaciTaxRate"/>
+                            <ValidationMessage For="@(() => _facilities.FaciTaxRate)"/>
+                        </div>
+
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="startdate">Start Date</label>
+                            <InputDate TValue="DateTime" id="startdate" @bind-Value="_facilities.FaciStartdate"/>
+                            <ValidationMessage For="@(() => _facilities.FaciStartdate)"/>
+                        </div>
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="enddate">End Date</label>
+                            <InputDate TValue="DateTime" id="enddate" @bind-Value="_facilities.FaciEndDate"/>
+                            <ValidationMessage For="@(() => _facilities.FaciEndDate)"/>
+                        </div>
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="expose" class="form-label">Expose Price</label>
+                            <InputSelect id="expose" @bind-Value="_facilities.FaciExposePrice" class="form-control">
+                                <option value="1">Low Price</option>
+                                <option value="2">Rate Price</option>
+                                <option value="3">High Price</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => _facilities.FaciExposePrice)"/>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="action d-flex flex-wrap justify-content-end">
+                    <button type="button" data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                        Cancel
+                    </button>
+                    <button data-bs-dismiss="modal" class="main-btn primary-btn btn-hover m-1">
+                        Save
+                    </button>
+                </div>
+
+            </EditForm>
+
         </div>
     </div>
 </div>
+
 
 <!-- Create Hotel -->
-<div class="modal fade" id="createhotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createhotelLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createhotelLabel">Create Hotel</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-style mb-30">
-                    <div class="input-style-1">
-                        <label>Hotel Name</label>
-                        <input type="text" placeholder="Full Name">
-                    </div>
+<div class="warning-modal">
+    <div class="modal modal-lg fade" id="createFacility" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
 
-                    <div class="input-style-1">
-                        <label>Phone Number</label>
-                        <input type="text" placeholder="Phone Number">
-                    </div>
-
-                    <div class="select-style-1">
-                        <label>Status</label>
-                        <div class="select-position">
-                            <select>
-                                <option hidden>Choose status hotel</option>
-                                <option value="">Active</option>
-                                <option value="">Disactive</option>
-                            </select>
-                        </div>
-                    </div> <!-- end input -->
-
-                    <div class="input-style-3">
-                        <label>City</label>
-                        <input type="text" placeholder="City">
-                        <span class="icon mt-30">
-                            <i class="lni lni-search-alt"></i>
-                        </span>
-                    </div>
-
-                    <div class="input-style-1">
-                        <label>Address</label>
-                        <textarea placeholder="Address" rows="3"></textarea>
-                    </div>
+            <EditForm autocomplete="off" class="modal-content card-style" Model="_facilities" OnValidSubmit="Create">
+                <DataAnnotationsValidator/>
 
 
-                    <div class="input-style-1">
-                        <label>Hotel Description</label>
-                        <textarea placeholder="Hotel Description" rows="3"></textarea>
-                    </div>
-                    <!-- end input -->
+                <!-- Model="_venpro" OnValidSubmit="OnUpdateConfirmed" -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditLabel">Add Facilities</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
+
+                <div class="modal-body px-0">
+                    <div class="row">
+
+                        <div class="input-style-2 col-6 rounded-sm">
+                            <label for="FaciName">Facility Name</label>
+                            <div class="select-position">
+                                <InputText placeholder="Facility Name" id="FaciName    " @bind-Value="_facilities.FaciName"/>
+                                <ValidationMessage For="@(() => _facilities.FaciName)"/>
+                            </div>
+                        </div>
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="categories" class="form-label">Categories</label>
+                            <InputSelect id="categories" @bind-Value="_facilities.FaciCagroId" class="form-control">
+                                <option hidden>Choose Category Facility</option>
+                                @foreach (var itemCagro in CategoryGroupData)
+                                {
+                                    <option value="@itemCagro.CagroId">@itemCagro.CagroId - @itemCagro.CagroName</option>
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => _facilities.FaciCagroId)"/>
+                        </div>
+
+                        <div class="input-style-2 rounded-sm">
+                            <label for="Facidesc">Facility Description</label>
+                            <div class="select-position">
+                                <InputTextArea placeholder="Facility Description" id="Facidesc" @bind-Value="_facilities.FaciDescription"/>
+                                <ValidationMessage For="@(() => _facilities.FaciDescription)"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-style-1 col-3 rounded-sm">
+                                <label for="roomnumber">Room Number</label>
+                                <InputText placeholder="Room Number" id="roomnumber" @bind-Value="_facilities.FaciRoomNumber"/>
+                                <ValidationMessage For="@(() => _facilities.FaciRoomNumber)"/>
+                            </div>
+                            <div class="input-style-1 col-3 rounded-sm">
+                                <label for="maxvacant">Max Person</label>
+                                <InputNumber placeholder="Max Vacant" id="maxvacant" @bind-Value="_facilities.FaciMaxNumber"/>
+                                <ValidationMessage For="@(() => _facilities.FaciMaxNumber)"/>
+                            </div>
+                        </div>
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="lowprice">Low Price</label>
+                            <InputNumber placeholder="Low Price" id="lowprice" @bind-Value="_facilities.FaciLowPrice"/>
+                            <ValidationMessage For="@(() => _facilities.FaciLowPrice)"/>
+                        </div>
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="highprice">High Price</label>
+                            <InputNumber placeholder="High Price" id="highprice" @bind-Value="_facilities.FaciHighPrice"/>
+                            <ValidationMessage For="@(() => _facilities.FaciHighPrice)"/>
+                        </div>
+
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="disc">Disc %</label>
+                            <InputNumber placeholder="Discount Price" id="disc" @bind-Value="_facilities.FaciDiscount"/>
+                            <ValidationMessage For="@(() => _facilities.FaciDiscount)"/>
+                        </div>
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="tax">Tax %</label>
+                            <InputNumber placeholder="Tax Price" id="tax" @bind-Value="_facilities.FaciTaxRate"/>
+                            <ValidationMessage For="@(() => _facilities.FaciTaxRate)"/>
+                        </div>
+
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="startdate">Start Date</label>
+                            <InputDate TValue="DateTime" id="startdate" @bind-Value="_facilities.FaciStartdate"/>
+                            <ValidationMessage For="@(() => _facilities.FaciStartdate)"/>
+                        </div>
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="enddate">End Date</label>
+                            <InputDate TValue="DateTime" id="enddate" @bind-Value="_facilities.FaciEndDate"/>
+                            <ValidationMessage For="@(() => _facilities.FaciEndDate)"/>
+                        </div>
+
+                        <div class="input-style-1 col-6 rounded-sm">
+                            <label for="expose" class="form-label">Expose Price</label>
+                            <InputSelect id="expose" @bind-Value="_facilities.FaciExposePrice" class="form-control">
+                                <option value="1">Low Price</option>
+                                <option value="2">Rate Price</option>
+                                <option value="3">High Price</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => _facilities.FaciExposePrice)"/>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="action d-flex flex-wrap justify-content-end">
+                    <button type="button" data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                        Cancel
+                    </button>
+                    <button data-bs-dismiss="modal" class="main-btn primary-btn btn-hover m-1">
+                        Save
+                    </button>
+                </div>
+
+            </EditForm>
+
         </div>
     </div>
 </div>
+<SuccessNotification @ref="_notification"/>
 
-
-<!--Switch Status-->
-<div class="modal fade" id="switchstatushotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="switchstatushotelLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="switchstatushotelLabel">Edit Status Hotel</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-style mb-30">
-
-                    <div class="select-style-1">
-                        <label>Status</label>
-                        <div class="select-position">
-                            <select>
-                                <option hidden>Choose status hotel</option>
-                                <option value="">Active</option>
-                                <option value="">Disactive</option>
-                            </select>
-                        </div>
-                    </div> <!-- end input -->
-
-                    <div class="input-style-1">
-                        <label>Reason Status</label>
-                        <textarea placeholder="Hotel Description" rows="3"></textarea>
-                    </div>
-                    <!-- end input -->
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--Delete Hotel-->
-<div class="warning-modal">
-    <div class="modal fade" id="@($"delete")" tabindex="-1" aria-hidden="true" role="dialog" style="display: none;">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content card-style warning-card text-center">
-                <div class="modal-body">
-                    <div class="icon text-danger mb-20">
-                        <i class="lni lni-warning"></i>
-                    </div>
-                    <div class="content mb-30">
-                        <h3 class="mb-15">
-                            Anda akan menghapus Fasilitas ini?
-                        </h3>
-                        <p class="text-sm text-medium">
-                            Cancel untuk Membatalkan
-                        </p>
-                    </div>
-                    <div class="action d-flex flex-wrap justify-content-center">
-                        <button type="button" data-bs-dismiss="modal" class="main-btn dark-btn-outline btn-hover m-1">
-                            Cancel
-                        </button>
-                        <button data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
-                            Delete
-                        </button>
+@foreach (var items in FacilitiesData)
+{
+    <!-- Seragam Modal Delete Vendor-->
+    <div class="warning-modal">
+        <div class="modal fade" id="@($"delete{items.FaciId}")" tabindex="-1" aria-hidden="true" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content card-style warning-card text-center">
+                    <div class="modal-body">
+                        <div class="icon text-danger mb-20">
+                            <i class="lni lni-warning"></i>
+                        </div>
+                        <div class="content mb-30">
+                            <h2 class="mb-15">Warning!</h2>
+                            <h5> @items.FaciName will be deleted? </h5>
+                            <p class="text-sm text-medium">
+                                Data that has been deleted cannot be recovered
+                            </p>
+                        </div>
+                        <div class="action d-flex flex-wrap justify-content-center">
+                            <button data-bs-dismiss="modal" class="main-btn light-btn-outline rounded-full btn-hover m-1">
+                                Cancel
+                            </button>
+                            <button data-bs-dismiss="modal" class="main-btn danger-btn rounded-full btn-hover m-1" @onclick="() => Delete(HotelId, items.FaciId)">
+                                Continue
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+}
+
+
+<!-- Modal Upload Photos -->
+<div class="modal modal-lg fade" id="@("uploadphotos")" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form autocomplete="off" class="modal-content card-style">
+            <div class="modal-header">
+                <h5 class="modal-title" id="EditLabel">Add Resto Menus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                <div class="container">
+                    <div class="row">
+                        @for (var i = 0; i <= 3; i++)
+                        {
+                            <div class="col-sm-3">
+                                <div class="upload-container">
+                                    <img src="./icon-192.png" alt="Foto 4" class="img-fluid upload-img">
+                                    <label for="file2" class="upload-label">
+                                        <i class="bi bi-cloud-upload"></i> Choose Image
+                                    </label>
+                                    <input type="file" id="file2" style="display:none;">
+                                </div>
+                                <div>
+                                    <input type="radio" name="primary_key" value="1">
+                                    <label> Primary Image</label>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="action d-flex flex-wrap justify-content-end">
+                <button type="button" data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                    Cancel
+                </button>
+                <button data-bs-dismiss="modal" class="main-btn primary-btn btn-hover m-1">
+                    Save
+                </button>
+            </div>
+        </form>
     </div>
 </div>
