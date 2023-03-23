@@ -7,248 +7,456 @@
 
 
 <section class="table-components">
-    <div class="container-fluid">
-        <div class="title-wrapper pt-30">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="title mb-30">
-                        <h2>Hotels</h2>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-md-6">
-                    <div class="breadcrumb-wrapper mb-30">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#0">Hotels</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    Hotel
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-
-                <!-- end col -->
+<div class="container-fluid">
+<div class="title-wrapper pt-30">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="title mb-30">
+                <h2>Hotels</h2>
             </div>
-            <!-- end row -->
         </div>
-
-
-        <div class="card-style ">
-            <div class="d-flex justify-content-center">
-                <div class="search d-md-flex">
-                    <div class="input-style-3 mx-auto">
-                        <Search OnSearchChanged="SearchChange" NameOfSearch="Hotel"/>
-                    </div>
-                </div>
-            </div>
-
-            <!-- End Title -->
-            <div class="table-responsive">
-                @* <HotelsTableStatic /> *@
-                <HotelsTable DataHotel="HotelList"/>
-                <!-- End Table -->
-            </div>
-            <div class="row">
-                <div class="col">
-                    @*Place for pagination*@
-                    <Pagination MetaData="MetaData" Spread="1" SelectedPage="SelectedPage" />
-                </div>
+        <!-- end col -->
+        <div class="col-md-6">
+            <div class="breadcrumb-wrapper mb-30">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        @* <li class="breadcrumb-item"> *@
+                        @*     <a href="#0">Hotels</a> *@
+                        @* </li> *@
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Hotel
+                        </li>
+                    </ol>
+                </nav>
             </div>
         </div>
 
+        <!-- end col -->
     </div>
+    <!-- end row -->
+</div>
+
+
+<div class="card-style ">
+    @* <div class="d-flex justify-content-center"> *@
+    @*     <div class="search d-md-flex"> *@
+    @*         <div class="input-style-3 mx-auto"> *@
+    @* *@
+    @*             <Search OnSearchChanged="SearchChange" NameOfSearch="Hotel Name"/> *@
+    @* *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </div> *@
+
+    
+    <TableToolbar Placeholder="Hotel Name..."
+                  OnSearchChanged="SearchChange"
+                  OnPageSizeChanged="PageSizeChanged"/>
+    
+    <!-- End Title -->
+
+
+    <!-- START TABLE -->
+
+    <div class="dataTable-container table-responsive">
+        <table class="table dataTable-table ">
+            <thead>
+            <tr>
+                @* <th> *@
+                @*     <h6 class="text-sm text-medium text-center">Id</h6> *@
+                @* </th> *@
+                <th data-sortable class="@(_hotelsParameters.OrderBy switch 
+                                         { "HotelName desc" => "desc", "HotelName asc" => "asc", _ => ""})" 
+                    onclick="@(() => SortChanged("HotelName"))">
+                    <a class="dataTable-sorter">
+                        <h6>
+                            Hotel Name
+                        </h6>
+                    </a>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Rating Star
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Phone Number
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Status
+                    </h6>
+                </th>
+                <th class="min-width">
+                    <h6 class="text-sm text-medium text-center">
+                        Modified Date
+                    </h6>
+                </th>
+                <th>
+                    <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#addHotels">
+                        <a class="main-btn dark-btn-outline rounded-btn p-2" @onclick="Clear">
+                            <i class="mdi mdi-home-plus"></i> Add
+                        </a>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @if (HotelList.Count > 0)
+            {
+                foreach (var hotel in HotelList)
+                {
+                    <tr>
+                        <td>
+                            <p class="text-sm">@hotel.HotelName</p>
+                        </td>
+                        <td class="text-center">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if ((hotel.HotelRatingStar - i) < 1 && (hotel.HotelRatingStar - i) > 0)
+                                {
+                                    <span class="mdi mdi-star-half-full"></span>
+                                }
+                                else if ((hotel.HotelRatingStar - i) < 0)
+                                {
+                                    <span class="mdi mdi-star-outline"></span>
+                                }
+                                else
+                                {
+                                    <span class="mdi mdi-star"></span>
+                                }
+                            }
+                        </td>
+                        <td>
+                            @* @{ *@
+                            @*     string phoneNumber = ""; *@
+                            @*     if (hotel.HotelPhonenumber.Length == 12) *@
+                            @*     { *@
+                            @*         phoneNumber = string.Format("(0{0:##) ####-####}", double.Parse(@hotel.HotelPhonenumber)); *@
+                            @*     } *@
+                            @*     else if (hotel.HotelPhonenumber.Length <= 10) *@
+                            @*     { *@
+                            @*         phoneNumber = string.Format("({0}) {1}{2}{3}-{4}{5}{6}", *@
+                            @*             hotel.HotelPhonenumber.Substring(0, 4), *@
+                            @*             hotel.HotelPhonenumber[4], *@
+                            @*             hotel.HotelPhonenumber[5], *@
+                            @*             hotel.HotelPhonenumber[6], *@
+                            @*             hotel.HotelPhonenumber[7], *@
+                            @*             hotel.HotelPhonenumber[8], *@
+                            @*             hotel.HotelPhonenumber[9]); *@
+                            @*     } *@
+                            @*     else *@
+                            @*     { *@
+                            @*         phoneNumber = hotel.HotelPhonenumber; *@
+                            @*     } *@
+                            @* } *@
+                            <p class="text-sm">@hotel.HotelPhonenumber</p>
+
+                        </td>
+                        <td class="text-center">
+                            @if (hotel.HotelStatus == false)
+                            {
+                                <span class="status-btn close-btn">Inactive</span>
+                            }
+                            else
+                            {
+                                <span class="status-btn active-btn">Active</span>
+                            }
+                        </td>
+                        <td class="text-center">
+                            <p class="text-sm">
+                                @hotel.HotelModifiedDate.ToString("dd MMMM yyyy")
+                            </p>
+                        </td>
+                        <td>
+                            <div class="action justify-content-end">
+                                <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="lni lni-more-alt"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1">
+                                    <li class="dropdown-item">
+                                        <a class="text-gray" data-bs-toggle="modal" data-bs-target="#@($"edithotel")" @onclick="() => UpdateHotel(hotel)">Edit</a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="/hotel/@hotel.HotelId/facilities" class="text-gray">Add Facilities</a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="/hotel/@hotel.HotelId/reviews" class="text-gray">Reviews</a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a class="text-gray" data-bs-toggle="modal" data-bs-target="#@($"switchstatushotel")" @onclick="() => UpdateSwitchStatusHotel(hotel)">Switch Status</a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a class="text-danger" data-bs-toggle="modal" data-bs-target="#@($"delete{@hotel.HotelId}")">
+                                            Delete
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7" class="text-center text-gray">
+                        <h6>
+                            DATA NOT FOUND
+                        </h6>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- END TABLE -->
+    <div class="row">
+        <div class="col">
+            @*Place for pagination*@
+            <TablePagination MetaData="MetaData" Spread="1" SelectedPage="SelectedPage"/>
+        </div>
+    </div>
+
+
+    @* <HotelsTableStatic /> *@
+    <!-- End Table -->
+
+</div>
+</div>
 </section>
 
 <!-- Edit Hotel -->
-<div class="modal fade" id="edithotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="edithotelLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="edithotelLabel">Edit Hotel</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-style mb-30">
-                    <div class="input-style-1">
-                        <label>Hotel Name</label>
-                        <input type="text" placeholder="Full Name" value="Hotel Realta 20">
-                    </div>
-
-                    <div class="input-style-1">
-                        <label>Phone Number</label>
-                        <input type="text" placeholder="Phone Number" value="+62 857 0718 0167">
-                    </div>
-
-                    @* <div class="select-style-1"> *@
-                    @*     <label>Status</label> *@
-                    @*     <div class="select-position"> *@
-                    @*         <select> *@
-                    @*             $1$ <option hidden>Choose status hotel</option> #1# *@
-                    @*             <option value="">Active</option>     *@
-                    @*             <option value="">Disactive</option> *@
-                    @*         </select> *@
-                    @*     </div> *@
-                    @* </div> <!-- end input --> *@
-
-                    <div class="input-style-3">
-                        <label>City</label>
-                        <input type="text" placeholder="City" value="INDONESIA, JAWA TIMUR, MALANG 65152">
-                        <span class="icon mt-30">
-                            <i class="lni lni-search-alt"></i>
-                        </span>
-                    </div>
-
-                    <div class="input-style-1">
-                        <label>Address</label>
-                        <textarea placeholder="Address" rows="3">JL ABU ALI 20, Kec Haruwi uhuy</textarea>
-                    </div>
-
-
-                    <div class="input-style-1">
-                        <label>Hotel Description</label>
-                        <textarea placeholder="Hotel Description" rows="3">Hotel indah untuk semua anak Bootcamp Limboto</textarea>
-                    </div>
-                    <!-- end input -->
+<div class="warning-modal">
+    <div class="modal modal-lg fade" id="@($"edithotel")" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <EditForm autocomplete="off" class="modal-content card-style" Model="_hotels" OnValidSubmit="OnUpdateConfirm">
+                <DataAnnotationsValidator/>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditLabel">Edit Hotels</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
+                <div class="modal-body px-0">
+                    <div class="row">
+                        <div class="input-style-2">
+                            <label for="HotelName">Hotel Name</label>
+                            <div class="select-position">
+                                <InputText placeholder="Hotel Name" id="HotelName    " @bind-Value="_hotels.HotelName"/>
+                                <ValidationMessage For="@(() => _hotels.HotelName)"/>
+                            </div>
+                        </div>
+
+
+                        <div class="input-style-2">
+                            <label for="HotelPhonenumber">Phone Number</label>
+                            <div class="select-position">
+                                <InputText placeholder="input here ex: 089812347654" type="tel" id="HotelPhonenumber" @bind-Value="_hotels.HotelPhonenumber"/>
+                                <ValidationMessage For="@(() => _hotels.HotelPhonenumber)"/>
+                            </div>
+                        </div>
+                        @* <div class="input-style-3"> *@
+                        @*     <label>City</label> *@
+                        @*     <input type="text" placeholder="City"> *@
+                        @*     <span class="icon ml-10 mt-30"> *@
+                        @*         <i class="lni lni-search-alt"></i> *@
+                        @*     </span> *@
+                        @* </div> *@
+
+                        <div class="input-style-2">
+                            <label for="HotelAddrDescription">Hotel Address</label>
+                            <div class="select-position">
+                                <InputText placeholder="Hotel Address" id="HotelAddrDescription" @bind-Value="_hotels.HotelAddrDescription"/>
+                                <ValidationMessage For="@(() => _hotels.HotelAddrDescription)"/>
+                            </div>
+                        </div>
+
+                        <div class="input-style-2">
+                            <label for="HotelDescription">Hotel Description</label>
+                            <div class="select-position">
+                                <InputText placeholder="Hotel Description" id="HotelDescription" @bind-Value="_hotels.HotelDescription"/>
+                                <ValidationMessage For="@(() => _hotels.HotelDescription)"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="action d-flex flex-wrap justify-content-end">
+                    <button type="button" data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                        Cancel
+                    </button>
+                    <button data-bs-dismiss="modal" class="main-btn primary-btn btn-hover m-1">
+                        Submit
+                    </button>
+                </div>
+            </EditForm>
         </div>
     </div>
 </div>
+
 
 <!-- Create Hotel -->
-<div class="modal fade" id="createhotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createhotelLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createhotelLabel">Create Hotel</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-style mb-30">
-                    <div class="input-style-1">
-                        <label>Hotel Name</label>
-                        <input type="text" placeholder="Full Name">
-                    </div>
-
-                    <div class="input-style-2">
-                        <label>Phone Number</label>
-                        <input type="tel" placeholder="+62 857 0718 0167" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-                    </div>
-
-                    <div class="select-style-1">
-                        <label>Status</label>
-                        <div class="select-position">
-                            <select>
-                                <option hidden>Choose status hotel</option>
-                                <option value="">Active</option>
-                                <option value="">Disactive</option>
-                            </select>
-                        </div>
-                    </div> <!-- end input -->
-
-                    <div class="input-style-3">
-                        <label>City</label>
-                        <input type="text" placeholder="City">
-                        <span class="icon mt-30">
-                            <i class="lni lni-search-alt"></i>
-                        </span>
-                    </div>
-
-                    <div class="input-style-1">
-                        <label>Address</label>
-                        <textarea placeholder="Address" rows="3"></textarea>
-                    </div>
-
-
-                    <div class="input-style-1">
-                        <label>Hotel Description</label>
-                        <textarea placeholder="Hotel Description" rows="3"></textarea>
-                    </div>
-                    <!-- end input -->
+<div class="warning-modal">
+    <div class="modal modal-lg fade" id="addHotels" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <EditForm autocomplete="off" class="modal-content card-style" Model="_hotels" OnValidSubmit="Create">
+                <DataAnnotationsValidator/>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditLabel">Add Hotels</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
+                <div class="modal-body px-0">
+                    <div class="row">
+                        
+                        <div class="input-style-2">
+                            <label for="HotelName">Hotel Name</label>
+                            <div class="select-position">
+                                <InputText placeholder="Hotel Name" id="HotelName    " @bind-Value="_hotels.HotelName"/>
+                                <ValidationMessage For="@(() => _hotels.HotelName)"/>
+                            </div>
+                        </div>
+
+
+                        <div class="input-style-2">
+                            <label for="HotelPhonenumber">Phone Number</label>
+                            <div class="select-position">
+                                <InputText placeholder="input here ex: 089812347654" type="tel" id="HotelPhonenumber" @bind-Value="_hotels.HotelPhonenumber"/>
+                                <ValidationMessage For="@(() => _hotels.HotelPhonenumber)"/>
+                            </div>
+                        </div>
+
+                        <div class="select-style-2 col-6 rounded-sm">
+                            <label>Hotel Status</label>
+                            <div class="select-position">
+                                <InputSelect id="Status" @bind-Value="_hotels.HotelStatus" class="form-control">
+                                    <option hidden>Choose status hotel</option>
+                                    <option value="true">Active</option>
+                                    <option value="false">Disactive</option>
+                                </InputSelect>
+                            </div>
+                        </div> <!-- end input -->
+
+                        @* <div class="input-style-3"> *@
+                        @*     <label>City</label> *@
+                        @*     <input type="text" placeholder="City"> *@
+                        @*     <span class="icon ml-10 mt-30"> *@
+                        @*         <i class="lni lni-search-alt"></i> *@
+                        @*     </span> *@
+                        @* </div> *@
+
+                        <div class="input-style-2">
+                            <label for="HotelAddrDescription">Hotel Address</label>
+                            <div class="select-position">
+                                <InputText placeholder="Hotel Address" id="HotelAddrDescription" @bind-Value="_hotels.HotelAddrDescription"/>
+                                <ValidationMessage For="@(() => _hotels.HotelAddrDescription)"/>
+                            </div>
+                        </div>
+
+                        <div class="input-style-2">
+                            <label for="HotelDescription">Hotel Description</label>
+                            <div class="select-position">
+                                <InputText placeholder="Hotel Description" id="HotelDescription" @bind-Value="_hotels.HotelDescription"/>
+                                <ValidationMessage For="@(() => _hotels.HotelDescription)"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="action d-flex flex-wrap justify-content-end">
+                    <button type="button" data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                        Cancel
+                    </button>
+                    <button data-bs-dismiss="modal" class="main-btn primary-btn btn-hover m-1">
+                        Submit
+                    </button>
+                </div>
+            </EditForm>
         </div>
     </div>
 </div>
-
+<SuccessNotification @ref="_notification"/>
 
 <!--Switch Status-->
-<div class="modal fade" id="switchstatushotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="switchstatushotelLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="switchstatushotelLabel">Edit Status Hotel</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-style mb-30">
-
-                    <div class="select-style-1">
-                        <label>Status</label>
-                        <div class="select-position">
-                            <select>
-                                <option hidden>Choose status hotel</option>
-                                <option value="">Active</option>
-                                <option value="">Disactive</option>
-                            </select>
-                        </div>
-                    </div> <!-- end input -->
-
-                    <div class="input-style-1">
-                        <label>Reason Status</label>
-                        <textarea placeholder="Hotel Description" rows="3"></textarea>
-                    </div>
-                    <!-- end input -->
+<div class="warning-modal">
+    <div class="modal modal-lg fade" id="@($"switchstatushotel")" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <EditForm autocomplete="off" class="modal-content card-style" Model="_hotelSwitchDto" OnValidSubmit="OnUpdateStatusHotelConfirm">
+                <DataAnnotationsValidator/>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditLabel">Edit Hotels</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
-            </div>
+                <div class="modal-body px-0">
+                    <div class="row">
+
+                        <div class="select-style-2 col-6 rounded-sm">
+                            <label>Hotel Status</label>
+                            <div class="select-position">
+                                <InputSelect id="Status" @bind-Value="_hotelSwitchDto.HotelStatus" class="form-control">
+                                    <option value="true">Active</option>
+                                    <option value="false">Disactive</option>
+                                </InputSelect>
+                            </div>
+                        </div> <!-- end input -->
+
+
+                        <div class="input-style-2">
+                            <label for="HotelDescription">Hotel Description</label>
+                            <div class="select-position">
+                                <InputTextArea placeholder="Hotel Description" id="HotelDescription" @bind-Value="_hotelSwitchDto.HotelReasonStatus"/>
+                                <ValidationMessage For="@(() => _hotelSwitchDto.HotelReasonStatus)"/>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="action d-flex flex-wrap justify-content-end">
+                    <button type="button" data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
+                        Cancel
+                    </button>
+                    <button data-bs-dismiss="modal" class="main-btn primary-btn btn-hover m-1">
+                        Submit
+                    </button>
+                </div>
+            </EditForm>
         </div>
     </div>
 </div>
 
 
 <!--Delete Hotel-->
-<div class="warning-modal">
-    <div class="modal fade" id="@($"delete")" tabindex="-1" aria-hidden="true" role="dialog" style="display: none;">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content card-style warning-card text-center">
-                <div class="modal-body">
-                    <div class="icon text-danger mb-20">
-                        <i class="lni lni-warning"></i>
-                    </div>
-                    <div class="content mb-30">
-                        <h3 class="mb-15">
-                            Anda akan menghapus Hotel ini?
-                        </h3>
-                        <p class="text-sm text-medium">
-                            Cancel untuk Membatalkan
-                        </p>
-                    </div>
-                    <div class="action d-flex flex-wrap justify-content-center">
-                        <button type="button" data-bs-dismiss="modal" class="main-btn dark-btn-outline btn-hover m-1">
-                            Cancel
-                        </button>
-                        <button data-bs-dismiss="modal" class="main-btn danger-btn-outline btn-hover m-1">
-                            Delete
-                        </button>
+@foreach (var items in HotelList)
+{
+    <!-- Seragam Modal Delete Vendor-->
+    <div class="warning-modal">
+        <div class="modal fade" id="@($"delete{items.HotelId}")" tabindex="-1" aria-hidden="true" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content card-style warning-card text-center">
+                    <div class="modal-body">
+                        <div class="icon text-danger mb-20">
+                            <i class="lni lni-warning"></i>
+                        </div>
+                        <div class="content mb-30">
+                            <h2 class="mb-15">Warning!</h2>
+                            <h5> @items.HotelName will be deleted? </h5>
+                            <p class="text-sm text-medium">
+                                Data that has been deleted cannot be recovered
+                            </p>
+                        </div>
+                        <div class="action d-flex flex-wrap justify-content-center">
+                            <button data-bs-dismiss="modal" class="main-btn light-btn-outline rounded-full btn-hover m-1">
+                                Cancel
+                            </button>
+                            <button data-bs-dismiss="modal" class="main-btn danger-btn rounded-full btn-hover m-1" @onclick="() => Delete(items.HotelId)">
+                                Continue
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
