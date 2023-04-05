@@ -1,35 +1,42 @@
 ﻿@using System.Globalization
+
 <div class="table-responsive">
     <table class="table top-selling-table">
         <thead>
         <tr>
-            <th>
-                <h6 class="text-sm text-medium text-center">#</h6>
-            </th>
             <th class="min-width">
                 <h6 class="text-sm text-medium text-center">
                     Facility Name
-                    <i class="lni lni-arrows-vertical"></i>
                 </h6>
             </th>
             <th class="min-width">
                 <h6 class="text-sm text-medium text-center">
-                    Expose Price
+                    Room Number
                 </h6>
             </th>
             <th class="min-width">
                 <h6 class="text-sm text-medium text-center">
-                    Start Date
+                    Max Vacant
+                </h6>
+            </th>
+            @* <th class="min-width"> *@
+            @*     <h6 class="text-sm text-medium text-center"> *@
+            @*         Expose Price *@
+            @*     </h6> *@
+            @* </th> *@
+            <th class="min-width">
+                <h6 class="text-sm text-medium text-center">
+                    Start End Date
                 </h6>
             </th>
             <th class="min-width">
                 <h6 class="text-sm text-medium text-center">
-                    End Date
+                    Range Price
                 </h6>
             </th>
             <th class="min-width">
                 <h6 class="text-sm text-medium text-center">
-                    Low Price
+                    Disc.
                 </h6>
             </th>
             <th class="min-width">
@@ -39,12 +46,7 @@
             </th>
             <th class="min-width">
                 <h6 class="text-sm text-medium text-center">
-                    High Price
-                </h6>
-            </th>
-            <th class="min-width">
-                <h6 class="text-sm text-medium text-center">
-                    Modified Date
+                    Tax
                 </h6>
             </th>
             <th>
@@ -63,52 +65,85 @@
 
         @if (FacilitiesData.Count() > 0)
         {
-            var index = 1;
             foreach (var faci in FacilitiesData)
             {
                 <tr>
-                    <td>
-                        <p class="text-sm text-center">@(index++)</p>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciName</p>
+                        </span>
                     </td>
-                    <td>
-                        <p class="text-sm text-center">@faci.FaciName</p>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciRoomNumber</p>
+                        </span>
                     </td>
-                    <td>
-                        @{
-                            if (faci.FaciExposePrice == 1)
-                            {
-                                <span class="status-btn success-btn text-center">Low Price</span>
-                            }
-                            else if (faci.FaciExposePrice == 2)
-                            {
-                                <span class="status-btn active-btn text-center">Rate Price</span>
-                            }
-                            else if (faci.FaciExposePrice == 3)
-                            {
-                                <span class="status-btn warning-btn text-center">High Price</span>
-                            }
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciMaxNumber @faci.FaciMeasureUnit</p>
+                        </span>
+                    </td>
+                    @* <td class="text-center"> *@
+                    @*     @{ *@
+                    @*         if (faci.FaciExposePrice == 1) *@
+                    @*         { *@
+                    @*             <span style="white-space: nowrap" class="status-btn success-btn text-center">Low Price</span> *@
+                    @*         } *@
+                    @*         else if (faci.FaciExposePrice == 2) *@
+                    @*         { *@
+                    @*             <span style="white-space: nowrap" class="status-btn active-btn text-center">Rate Price</span> *@
+                    @*         } *@
+                    @*         else if (faci.FaciExposePrice == 3) *@
+                    @*         { *@
+                    @*             <span style="white-space: nowrap" class="status-btn warning-btn text-center">High Price</span> *@
+                    @*         } *@
+                    @* *@
+                    @*     } *@
+                    @* </td> *@
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@((faci.FaciStartdate).ToString("dd MMMM yyyy"))</p>
+                        </span>
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@((faci.FaciEndDate).ToString("dd MMMM yyyy"))</p>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciLowPrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                        </span>
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciHighPrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                        </span>
+                    </td>
 
+                    <td class="text-center">
+                        @if (faci.FaciDiscount != 0)
+                        {
+                            <p class="text-sm text-center">@(((decimal)faci.FaciDiscount).ToString("N0")) %</p>
+                        }
+                        else
+                        {
+                            <p class="text-sm text-center"> - </p>
                         }
                     </td>
-                    <td class="ml-50 mr-50">
-                        <p class="text-sm text-center">@((faci.FaciStartdate).ToString("dd MMMM yyyy"))</p>
+                    <td class="text-center">
+                        <span style="white-space: nowrap">
+                            <p class="text-sm text-center">@faci.FaciRatePrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                        </span>
                     </td>
-                    <td>
-                        <p class="text-sm text-center">@((faci.FaciEndDate).ToString("dd MMMM yyyy"))</p>
+
+                    <td class="text-center">
+                        @if (faci.FaciTaxRate != 0)
+                        {
+                            <p class="text-sm text-center">@(((decimal)faci.FaciTaxRate).ToString("N0")) %</p>
+                        }
+                        else
+                        {
+                            <p class="text-sm text-center"> - </p>
+                        }
                     </td>
-                    <td>
-                        <p class="text-sm text-center">@faci.FaciLowPrice.ToString("C",new CultureInfo("id-ID"))</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">@faci.FaciRatePrice.ToString("C",new CultureInfo("id-ID"))</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">@faci.FaciHighPrice.ToString("C",new CultureInfo("id-ID"))</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">@((faci.FaciModifiedDate).ToString("dd MMMM yyyy"))</p>
-                    </td>
-                    <td>
+                    <td class="text-center">
                         <div class="action align-content-center">
                             <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="lni lni-more-alt"></i>
@@ -121,7 +156,7 @@
                                     <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="/hotel/{HotelId}/facility/@faci.FaciId/History" class="text-gray">Price History</a>
+                                    <a href="/hotel/@HotelId/facility/@faci.FaciId/History" class="text-gray">Price History</a>
                                 </li>
                                 <li class="dropdown-item">
                                     <a class="text-gray">Upload Photos</a>
