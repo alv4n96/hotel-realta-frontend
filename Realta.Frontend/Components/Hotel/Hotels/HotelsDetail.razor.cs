@@ -3,7 +3,7 @@ using Realta.Contract.Models.v1.Hotels;
 
 namespace Realta.Frontend.Components.Hotel.Hotels
 {
-    public partial class HotelsTable
+    public partial class HotelsDetail
     {
         [Parameter] public List<HotelsDto> DataHotel { get; set; }
 
