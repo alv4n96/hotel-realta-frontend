@@ -6,7 +6,7 @@
     }
     else
     {
-        <input type="text" class="form-control" placeholder="Search by @NameOfSearch name"
+        <input type="text" class="form-control" placeholder="Search by @NameOfSearch"
                @bind-value="@SearchTerm" @bind-value:event="oninput" @onkeyup="async () => await OnSearchChanged.InvokeAsync(SearchTerm)"/>
     }
 </section>
