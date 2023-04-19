@@ -1,250 +1,208 @@
-﻿@page "/hotels/{hotelId:int}/facility/{faciId:int}/History"
+﻿@page "/hotel/{HotelId:int}/facility/{FaciId:int}/History"
+
+@using Realta.Frontend.Components.Hotel
+@using System.Globalization
 
 <PageTitle>Facility History</PageTitle>
 
 <section class="table-components">
-<div class="container-fluid">
-<div class="title-wrapper pt-30">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <div class="title">
-                <h2>Facility History</h2>
+    <div class="container-fluid">
+        <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="title">
+                        <h2>Facility History</h2>
+                    </div>
+                </div>
+                <!-- end col -->
+                <div class="col-md-6">
+                    <div class="breadcrumb-wrapper mb-30">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/hotel">Hotels</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/hotel/@(HotelId)/facilities">Facilities</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    History
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+
+
+        <CardHotel HotelData="HotelData"/>
+
+        <div class="invoice-card card-style mb-30">
+            <div class="invoice-header">
+                <div class="invoice-for">
+                    <h2 class="mb-10">@FacilitiesData.FaciName</h2>
+                    <p class="text-sm">
+                        @FacilitiesData.FaciDescription
+                    </p>
+                </div>
+                <div class="invoice-date text-end">
+                    <p>
+                        @FacilitiesData.FaciRoomNumber
+                    </p>
+                </div>
             </div>
         </div>
-        <!-- end col -->
-        <div class="col-md-6">
-            <div class="breadcrumb-wrapper mb-30">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#0">Hotels</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#0">Facilities</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            History
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
 
-        <!-- end col -->
-    </div>
-    <!-- end row -->
-</div>
+    <div class="card-style ">
+        
+        
+        <!-- Put Component Search Here -->
 
-
-<div class="invoice-card card-style mb-30">
-    <div class="invoice-header">
-        <div class="invoice-for">
-            <h2 class="mb-10">Grand Livina Malang</h2>
-            <p class="text-sm">
-                Jl. Abu Abu no 20, Kec. Kuningan, Kota Malang, Jawa Timur, 65151
-            </p>
-        </div>
-        <div class="invoice-date text-end">
-            <p>
-                @phoneNumber<span>6</span>
-            </p>
-            <p>
-                <span class="mdi mdi-star"></span>
-                <span class="mdi mdi-star"></span>
-                <span class="mdi mdi-star-half-full"></span>
-                <span class="mdi mdi-star-outline"></span>
-                <span class="mdi mdi-star-outline"></span>
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="invoice-card card-style mb-30">
-    <div class="invoice-header">
-        <div class="invoice-for">
-            <h2 class="mb-10">Facility Sample 1</h2>
-            <p class="text-sm">
-                Some Detail Facility Sample 1
-            </p>
-        </div>
-        <div class="invoice-date text-end">
-            <p>
-                UNIQUE ROOM<span>6</span>
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="card-style ">
-    <div class="d-flex justify-content-center">
-        <div class="search d-md-flex">
-            <div class="input-style-3 mx-auto">
-                <input type="search" class="form-control h-50 d-inline-block w-100" placeholder="Search History Facilities" aria-label="Search" aria-describedby="search-addon"/>
-                <span class="icon">
-                    <button class="btn 
-                                               border-0 
-                                               lni lni-search-alt
-                                               position-absolute top-40 start-50 translate-middle">
-                    </button>
-                </span>
-            </div>
-            <div class="mx-auto">
-                <button type="button" class="btn btn-primary h-10 ml-5 align-content-center">
-                    <i class="mdi mdi-magnify"></i>search
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- End Title -->
-    <div class="table-responsive">
-        <table class="table top-selling-table">
-            <thead>
-            <tr>
-                <th>
-                    <h6 class="text-sm text-medium text-center">Id</h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Expose Price
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Start Date
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        End Date
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Low Price
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Rate Price
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        High Price
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Discount
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Tax Rate
-                    </h6>
-                </th>
-                <th class="min-width">
-                    <h6 class="text-sm text-medium text-center">
-                        Modified Date
-                    </h6>
-                </th>
-                @* <th> *@
-                @*     <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel"> *@
-                @*         <a class="main-btn primary-btn-outline rounded-btn p-2"> *@
-                @*             <i class="mdi mdi-home-plus"></i> Add *@
-                @*         </a> *@
-                @*     </div> *@
-                @* </th> *@
-            </tr>
-            </thead>
-
-
-            <tbody>
-
-            @for (int i = 1; i < 11; i++)
-            {
+        <!-- End Title -->
+        <div class="table-responsive">
+            <table class="table top-selling-table">
+                <thead>
                 <tr>
-                    <td>
-                        <p class="text-sm text-center">@i</p>
-                    </td>
-                    <td>
-                        <div class="text-center">
-
-                            @{
-                                int exposeRandNumber = new Random().Next(1, 4);
-                                if (exposeRandNumber == 1)
-                                {
-                                    <span class="status-btn success-btn">Low Price</span>
-                                }
-                                else if (exposeRandNumber == 2)
-                                {
-                                    <span class="status-btn active-btn">Rate Price</span>
-                                }
-                                else if (exposeRandNumber == 3)
-                                {
-                                    <span class="status-btn warning-btn">High Price</span>
-                                }
-
-                            }
-                        </div>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">2 May 2022</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">2 June 2022</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">Rp. 150 000</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">Rp. 170 000</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">Rp. 250 000</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">20 %</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">10 %</p>
-                    </td>
-                    <td>
-                        <p class="text-sm text-center">15 Mei 2023</p>
-                    </td>
-                    @* <td> *@
-                    @*     <div class="action align-content-center"> *@
-                    @*         <button class="more-btn ml-10 dropdown-toggle" id="moreAction1" data-bs-toggle="dropdown" aria-expanded="false"> *@
-                    @*             <i class="lni lni-more-alt"></i> *@
-                    @*         </button> *@
-                    @*         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreAction1"> *@
-                    @*             <li class="dropdown-item"> *@
-                    @*                 <a href="/hotels/1/facility/2/History" class="text-gray">History</a> *@
-                    @*             </li> *@
-                    @*             <li class="dropdown-item"> *@
-                    @*                 <a href="/hotels/1/facility/2/Details" class="text-gray">Details</a> *@
-                    @*             </li> *@
-                    @*             <li class="dropdown-item"> *@
-                    @*                 <a class="text-gray" data-bs-toggle="modal" data-bs-target="#edithotel">Edit</a> *@
-                    @*             </li> *@
-                    @*             <li class="dropdown-item"> *@
-                    @*                 <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#delete"> *@
-                    @*                     Delete *@
-                    @*                 </a> *@
-                    @*             </li> *@
-                    @*         </ul> *@
+                    @* <th> *@
+                    @*     <h6 class="text-sm text-medium text-center">Id</h6> *@
+                    @* </th> *@
+                    @* <th class="min-width"> *@
+                    @*     <h6 class="text-sm text-medium text-center"> *@
+                    @*         Expose Price *@
+                    @*     </h6> *@
+                    @* </th> *@
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            Start Date
+                        </h6>
+                    </th>
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            End Date
+                        </h6>
+                    </th>
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            Low Price
+                        </h6>
+                    </th>
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            Rate Price
+                        </h6>
+                    </th>
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            High Price
+                        </h6>
+                    </th>
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            Discount
+                        </h6>
+                    </th>
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            Tax Rate
+                        </h6>
+                    </th>
+                    <th class="min-width">
+                        <h6 class="text-sm text-medium text-center">
+                            Modified Date
+                        </h6>
+                    </th>
+                    @* <th> *@
+                    @*     <div class="action justify-content-end" data-bs-toggle="modal" data-bs-target="#createhotel"> *@
+                    @*         <a class="main-btn primary-btn-outline rounded-btn p-2"> *@
+                    @*             <i class="mdi mdi-home-plus"></i> Add *@
+                    @*         </a> *@
                     @*     </div> *@
-                    @* </td> *@
+                    @* </th> *@
                 </tr>
-            }
-            </tbody>
-        </table>
-        <!-- End Table -->
+                </thead>
+
+
+                <tbody>
+
+                @if (HistoryData.Count() > 0)
+                {
+                    foreach (var history in    HistoryData)
+                    {
+                        <tr>
+                            @* <td> *@
+                            @*     <div class="text-center"> *@
+                            @*         @if (history. == 1) *@
+                            @*         { *@
+                            @*         <span class="status-btn success-btn">Low Price</span> *@
+                            @*         } *@
+                            @*         else if (exposeRandNumber == 2) *@
+                            @*         { *@
+                            @*         <span class="status-btn active-btn">Rate Price</span> *@
+                            @*         } *@
+                            @*         else if (exposeRandNumber == 3) *@
+                            @*         { *@
+                            @*         <span class="status-btn warning-btn">High Price</span> *@
+                            @*         } *@
+                            @* *@
+                            @*         } *@
+                            @*         } *@
+                            @*     </div> *@
+                            @* </td> *@
+                            <td class="ml-50 mr-50">
+                                <p class="text-sm text-center">@((history.FaphStartdate).ToString("dd MMMM yyyy"))</p>
+                            </td>
+                            <td class="ml-50 mr-50">
+                                <p class="text-sm text-center">@((history.FaphEnddate).ToString("dd MMMM yyyy"))</p>
+                            </td>
+                            <td>
+                                <p class="text-sm text-center">@history.FaphLowPrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                            </td>
+                            <td>
+                                <p class="text-sm text-center">@history.FaphRatePrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                            </td>
+                            <td>
+                                <p class="text-sm text-center">@history.FaphHighPrice.ToString("C0", new CultureInfo("id-ID"))</p>
+                            </td>
+                            <td>
+                                @if (history.FaphDiscount != 0)
+                                {
+                                    <p class="text-sm text-center">@history.FaphDiscount.ToString("0.#") %</p>
+                                }
+                                else
+                                {
+                                    <p class="text-sm text-center"> - </p>
+                                }
+                            </td>
+
+                            <td>
+                                @if (history.FaphTaxRate != 0)
+                                {
+                                    <p class="text-sm text-center">@history.FaphTaxRate.ToString("0.#") %</p>
+                                }
+                                else
+                                {
+                                    <p class="text-sm text-center"> - </p>
+                                }
+                            </td>
+
+                            <td>
+                                <p class="text-sm text-center">@((history.FaphModifiedDate).ToString("dd MMMM yyyy HH:mm"))</p>
+                            </td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+            <!-- End Table -->
+        </div>
+        
+<Pagination MetaData="MetaData" Spread="1" SelectedPage="SelectedPage"/>
     </div>
-    <Paging2/>
-</div>
-</div>
+    </div>
 </section>
 
 <!-- Edit Hotel -->
@@ -435,16 +393,3 @@
         </div>
     </div>
 </div>
-
-
-@code
-{
-    [Parameter]
-    public int hotelId { get; set; }
-
-    [Parameter]
-    public int faciId { get; set; }
-
-    string phoneNumber = "+62 857 0718 0167";
-
-}
