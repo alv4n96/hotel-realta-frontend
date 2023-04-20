@@ -1,75 +1,57 @@
 ﻿using System.Text.Json;
-using Microsoft.AspNetCore.WebUtilities;
 using Realta.Contract.Models.v1;
-using Realta.Contract.Models.v1.Facilities;
-using Realta.Contract.Models.v1.Hotels;
-using Realta.Domain.RequestFeatures;
 using Realta.Domain.RequestFeatures.HotelParameters;
 using Realta.Frontend.Features;
+using Microsoft.AspNetCore.WebUtilities;
+using Realta.Domain.RequestFeatures;
 
-namespace Realta.Frontend.HttpRepository.Hotel.Facilities
+namespace Realta.Frontend.HttpRepository.Hotel.History
 {
-    public class FacilitiesHttpRepository : IFacilitiesHttpRepository
+    public class HistoryHttpRepository : IHistoryHttpRepository
     {
         private readonly HttpClient _httpClient;
         private readonly JsonSerializerOptions _options;
 
 
-        public FacilitiesHttpRepository(HttpClient httpClient)
+        public HistoryHttpRepository(HttpClient httpClient)
         {
             _httpClient = httpClient;
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
+        
 
-        public async Task<List<FacilitiesDto>> GetFacilities(int hotelId)
+        public async Task<List<FacilityPriceHistoryDto>> GetFacilitiesHistory(int hotelId, int faciId)
         {
-            //Call api end point, e.g :https://localhost:7068/api/hotels 
-            var response = await _httpClient.GetAsync($"facilities/{hotelId}/facilities");
+            // Call api end point, e.g :https://localhost:7068/api/hotels 
+            var response = await _httpClient.GetAsync($"FacilityPriceHistory/{hotelId}/facility/{faciId}/history");
             var content = await response.Content.ReadAsStringAsync();
 
 
             if (!response.IsSuccessStatusCode)
             {
-                var resErr = new List<FacilitiesDto>();
+                var resErr = new List<FacilityPriceHistoryDto>();
                 return resErr;
             }
 
-            var facilities = JsonSerializer.Deserialize<List<FacilitiesDto>>(content, _options);
+            var history = JsonSerializer.Deserialize<List<FacilityPriceHistoryDto>>(content, _options);
 
 
-            return facilities;
+            return history;
         }
 
-        public async Task<FacilitiesDto?> GetFacilityById(int hotelId, int faciId)
+        public async Task<PagingResponse<FacilityPriceHistoryDto>> GetFacilitiesPaging(HistoryParameters historyParameters,
+            int hotelId, int faciId)
         {
-            var response = await _httpClient.GetAsync($"facilities/{hotelId}/facilities/{faciId}");
-            var content = await response.Content.ReadAsStringAsync();
-
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new ApplicationException(content);
-            }
-
-            var hotels = JsonSerializer.Deserialize<FacilitiesDto>(content, _options);
-            
-            return hotels;
-            
-        }
-
-
-        public async Task<PagingResponse<FacilitiesDto>> GetFacilitiesPaging(FacilitiesParameters facilitiesParameter,int hotelId)
-        {
-            
             var queryStringParam = new Dictionary<string, string>
             {
-                ["pageNumber"] = facilitiesParameter.PageNumber.ToString(),
-                ["searchTerm"] = facilitiesParameter.SearchTerm == null ? "" : facilitiesParameter.SearchTerm
-                // ["orderBy"] = facilitiesParameter.OrderBy
+                ["pageNumber"] = historyParameters.PageNumber.ToString(),
+                ["searchTerm"] = historyParameters.SearchTerm == null ? "" : historyParameters.SearchTerm
+                // ["orderBy"] = historyParameters.OrderBy
             };
 
 
-            var response = await _httpClient.GetAsync(QueryHelpers.AddQueryString($"facilities/{hotelId}/facilities/pageList",queryStringParam));
+            var response = await _httpClient.GetAsync(QueryHelpers.AddQueryString($"FacilityPriceHistory/{hotelId}/facility/{faciId}/history/pagelist",
+                    queryStringParam));
             var content = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
@@ -77,44 +59,13 @@ namespace Realta.Frontend.HttpRepository.Hotel.Facilities
                 throw new ApplicationException(content);
             }
 
-            var pagingResponse = new PagingResponse<FacilitiesDto>
+            var pagingResponse = new PagingResponse<FacilityPriceHistoryDto>
             {
-                Items = JsonSerializer.Deserialize<List<FacilitiesDto>>(content, _options),
+                Items = JsonSerializer.Deserialize<List<FacilityPriceHistoryDto>>(content, _options),
                 MetaData = JsonSerializer.Deserialize<MetaData>(response.Headers.GetValues("X-Pagination").First(), _options)
             };
 
             return pagingResponse;
         }
-
-
-        /*--
-        public Task<PagingResponse<FacilitiesDto>> GetFacilitiesPaging(FacilitiesParameter facilitiesParameter)
-        {
-        
-            var queryStringParam = new Dictionary<string, string>
-            {
-                ["pageNumber"] = facilitiesParameter.PageNumber.ToString(),
-                ["searchTerm"] = facilitiesParameter.SearchTerm == null ? "" : facilitiesParameter.SearchTerm
-                // ["orderBy"] = facilitiesParameter.OrderBy
-            };
-
-
-            var response = await _httpClient.GetAsync(QueryHelpers.AddQueryString("facilities/{:id}/facilities/pageList",queryStringParam));
-            var content = await response.Content.ReadAsStringAsync();
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new ApplicationException(content);
-            }
-
-            var pagingResponse = new PagingResponse<HotelsDto>
-            {
-                Items = JsonSerializer.Deserialize<List<HotelsDto>>(content, _options),
-                MetaData = JsonSerializer.Deserialize<MetaData>(response.Headers.GetValues("X-Pagination").First(), _options)
-            };
-
-            return pagingResponse;
-        }
-        --*/
     }
 }
