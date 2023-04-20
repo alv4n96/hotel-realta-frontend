@@ -9,6 +9,10 @@ namespace Realta.Frontend.HttpRepository.Hotel.Hotels
     {
         Task<List<HotelsDto>> GetHotels();
         Task<HotelsDto?> GetHotelsById(int hotelId);
+        Task CreateHotel(HotelsDto formHotelDto);
+        Task EditHotel(HotelsDto formHotelDto);
+        Task EditStatusHotel(HotelSwitchDto switchDto);
+        Task DeleteHotel(int hotelId); 
         Task<PagingResponse<HotelsDto>> GetHotelPaging(HotelsParameters hotelsParameters);
     }
 }
