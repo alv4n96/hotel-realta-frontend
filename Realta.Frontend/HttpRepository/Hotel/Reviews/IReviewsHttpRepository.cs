@@ -5,11 +5,15 @@ using Realta.Contract.Models.v1.Hotels;
 using Realta.Domain.RequestFeatures.HotelParameters;
 using Realta.Frontend.Features;
 
-namespace Realta.Frontend.HttpRepository.Hotel.Facilities
+namespace Realta.Frontend.HttpRepository.Hotel.Reviews
 {
-    public interface IFacilitiesHttpRepository
+    public interface IReviewsHttpRepository
     {
-        Task<List<FacilitiesDto>> GetFacilities(int hotelId);
-        Task<PagingResponse<FacilitiesDto>> GetFacilitiesPaging(FacilitiesParameters facilitiesParameter, int hotelId);
+        Task<List<HotelReviewsDto>> GetReviews(int hotelId);
+        Task<PagingResponse<HotelReviewsDto>> GetReviewsPaging(ReviewsParameters reviewsParameters, int hotelId);
+        
+        Task CreateReview(HotelReviewsDto formHotelDto);
+        
+        Task DeleteHotel(int hotelId, int horeId); 
     }
 }
