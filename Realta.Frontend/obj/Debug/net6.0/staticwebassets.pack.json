@@ -73,6 +73,26 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\resources\\images\\093378b6-ef8e-45ac-b4e2-2e4e3dd5d8c7RobloxScreenShot 2.png",
+      "PackagePath": "staticwebassets\\resources\\images\\093378b6-ef8e-45ac-b4e2-2e4e3dd5d8c7RobloxScreenShot 2.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\resources\\images\\0f765e6f-b583-43e6-8adb-01c6d70d2465Capture001.png",
+      "PackagePath": "staticwebassets\\resources\\images\\0f765e6f-b583-43e6-8adb-01c6d70d2465Capture001.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\resources\\images\\5817814e-2cb2-4d75-8444-55c50570df13RobloxScreenShot 2.png",
+      "PackagePath": "staticwebassets\\resources\\images\\5817814e-2cb2-4d75-8444-55c50570df13RobloxScreenShot 2.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\resources\\images\\6038383f-9644-459b-9c68-679e74859a8cRobloxScreenShot 1.png",
+      "PackagePath": "staticwebassets\\resources\\images\\6038383f-9644-459b-9c68-679e74859a8cRobloxScreenShot 1.png"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\resources\\images\\c5bee9dc-62ad-4b6b-aec8-33fcb1600913RobloxScreenShot 1.png",
+      "PackagePath": "staticwebassets\\resources\\images\\c5bee9dc-62ad-4b6b-aec8-33fcb1600913RobloxScreenShot 1.png"
+    },
+    {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
@@ -101,6 +121,10 @@
       "PackagePath": "staticwebassets\\vendor\\assets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\datatables.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\datatables.css"
+    },
+    {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\fullcalendar.css",
       "PackagePath": "staticwebassets\\vendor\\assets\\css\\fullcalendar.css"
     },
@@ -123,6 +147,14 @@
     {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\morris.css",
       "PackagePath": "staticwebassets\\vendor\\assets\\css\\morris.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\quill\\bubble.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\quill\\bubble.css"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\css\\quill\\snow.css",
+      "PackagePath": "staticwebassets\\vendor\\assets\\css\\quill\\snow.css"
     },
     {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\fonts\\LineIcons.eot",
@@ -417,8 +449,20 @@
       "PackagePath": "staticwebassets\\vendor\\assets\\js\\Chart.min.js"
     },
     {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\Sortable.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\Sortable.min.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\apexcharts.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\apexcharts.min.js"
+    },
+    {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\vendor\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\datatable.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\datatable.js"
     },
     {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\dynamic-pie-chart.js",
@@ -447,6 +491,10 @@
     {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\polyfill.js",
       "PackagePath": "staticwebassets\\vendor\\assets\\js\\polyfill.js"
+    },
+    {
+      "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\quill.min.js",
+      "PackagePath": "staticwebassets\\vendor\\assets\\js\\quill.min.js"
     },
     {
       "Id": "D:\\C#_PROJECTS\\HotelRealtaStaging\\Realta.Frontend\\wwwroot\\vendor\\assets\\js\\world-merc.js",
